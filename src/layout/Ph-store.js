@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import Header from "../../Pharmacy/Components/Header";
-import SideBar from "../../Pharmacy/Components/SideBar";
+import Header from "../Components/Header";
+import SideBar from "../Components/SideBar";
 export const checkContext = React.createContext();
 const CheckProvider = checkContext.Provider;
 function Dashboard() {

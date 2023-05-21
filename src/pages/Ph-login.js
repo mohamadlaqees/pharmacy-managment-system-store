@@ -40,7 +40,7 @@ export default function PhLogin() {
   return (
     <React.Fragment>
       <div class="flex justify-between">
-        <div class="w-96 h-96 m-auto relative translate-y-1/2  text-start shadow-xl p-5 rounded-md bg-secondry xl:-translate-x-10% xl:bottom-48 tra">
+        <div class="w-96 h-96 m-auto relative translate-y-1/2  text-start shadow-xl p-5 rounded-md bg-secondry xl:-translate-x-10% xl:bottom-48 ">
           <Form onSubmit={formik.handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label class="text-SWord">Email</Form.Label>

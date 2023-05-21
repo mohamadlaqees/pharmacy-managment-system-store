@@ -1,12 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import './all.min.css';
+import App from "./App";
+import PhLogin from "./pages/Ph-login";
+import PhRegister from "./pages/Ph-register";
+import PhContent from "./pages/Ph-content";
+import PhStore from "./layout/Ph-store";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <PhLogin />,
+  },
+  {
+    path: "ph-login",
+    element: <PhLogin />,
+  },
+  {
+    path: "ph-register",
+    element: <PhRegister />,
+  },
+  {
+    path: "ph-store",
+    element: <PhStore />,
+    children: [{ index: true, element: <PhContent /> }],
+  },
+]);
 root.render(
+  <RouterProvider router={routes}>
     <App />
-  
+  </RouterProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
