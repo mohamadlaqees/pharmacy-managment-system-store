@@ -7,7 +7,7 @@ const CheckProvider = checkContext.Provider;
 function Dashboard() {
   const [check, setCheck] = useState(false);
   return (
-    <Fragment >
+    <Fragment>
       <div class="flex ">
         <CheckProvider value={check}>
           <SideBar />

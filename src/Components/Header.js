@@ -1,10 +1,31 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { Checkbox, Divider } from "antd";
+
 function Header({ set, check }) {
+  const CheckboxGroup = Checkbox.Group;
+  const plainOptions = ["Apple", "Pear", "Orange"];
+  const defaultCheckedList = [];
   const [showN, setShowN] = useState(false);
   const [showF, setShowF] = useState(false);
   const onSearch = (value) => console.log(value);
+
+  const [checkedList, setCheckedList] = useState(defaultCheckedList);
+  const [indeterminate, setIndeterminate] = useState(true);
+  const [checkAll, setCheckAll] = useState(false);
+  const onChange = (list) => {
+    setCheckedList(list);
+    setIndeterminate(!!list.length && list.length < plainOptions.length);
+    setCheckAll(list.length === plainOptions.length);
+  };
+  const onCheckAllChange = (e) => {
+    console.log(e.target.checked);
+    setCheckedList(e.target.checked ? plainOptions : []);
+    setIndeterminate(false);
+    setCheckAll(e.target.checked);
+  };
+
   return (
     <div class=" p-1 flex justify-between   bg-white rounded-md shadow-sm ">
       <div>
@@ -21,7 +42,6 @@ function Header({ set, check }) {
           >
             <i class="fas fa-search"></i>
           </InputGroup.Text>
-          {/* <input type={'text'} class=' p-1 border-2 border-SReg outline-none w-88%' placeholder="Search"/> */}
           <Form.Control
             placeholder="Search"
             aria-label="Search"
@@ -47,17 +67,21 @@ function Header({ set, check }) {
               showF ? "block" : "hidden"
             } `}
           >
-            <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
-              {["checkbox"].map((type) => (
-                <div key={`default-${type}`} className="mb-1">
-                  <Form.Check
-                    type={type}
-                    id={`default-${type}`}
-                    label={`default ${type}`}
-                    onChange={(e) => console.log(e.target.id)}
-                  />
-                </div>
-              ))}
+            <div class="p-2  transition-all border border-b-4 border-gray-500">
+              <Checkbox
+                indeterminate={indeterminate}
+                onChange={onCheckAllChange}
+                checked={checkAll}
+                class="mb-0"
+              >
+                Check all
+              </Checkbox>
+              <Divider />
+              <CheckboxGroup
+                options={plainOptions}
+                value={checkedList}
+                onChange={onChange}
+              />
             </div>
           </div>
         </InputGroup>
