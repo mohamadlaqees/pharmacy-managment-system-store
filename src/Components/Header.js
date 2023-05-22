@@ -54,10 +54,8 @@ function Header({ set, check }) {
                     type={type}
                     id={`default-${type}`}
                     label={`default ${type}`}
-                    onChange={(e)=>console.log(e.target.id)}
+                    onChange={(e) => console.log(e.target.id)}
                   />
-
-
                 </div>
               ))}
             </div>
