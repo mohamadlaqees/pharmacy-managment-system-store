@@ -27,6 +27,7 @@ html body {
   @apply bg-slate-50  rounded-md p-4;
   height: calc(100vh - 48px);
   margin-top: 48px;
+  overflow: auto;
 }
 .btn{
 }

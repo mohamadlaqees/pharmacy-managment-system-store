@@ -21,6 +21,35 @@ function SideBar() {
                 {check ? "" : "Home"}
               </NavLink>
             </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"store"}>
+                <i class="fas fa-shopping-cart "></i>
+                {check ? "" : "Store"}
+              </NavLink>
+            </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"users"}>
+                <i class="fa-solid fa-users"></i>
+                {check ? "" : "Users"}
+              </NavLink>
+            </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"stock"}>
+                <i class="fa-sharp fa-solid fa-layer-group"></i>
+                {check ? "" : "Stock"}
+              </NavLink>
+            </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"reports"}>
+                <i class="fas fa-file"></i> {check ? "" : "Reports"}
+              </NavLink>
+            </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"backups"}>
+                <i class="fa-solid fa-database"></i>
+                {check ? "" : "Backups"}
+              </NavLink>
+            </li>
  
           </ul>
         </div>
