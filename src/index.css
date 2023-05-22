@@ -17,14 +17,16 @@ html body {
   transition: .3s;
 }
 .link .route.active{
-  color: #0d6efc;
+  color:#1390e3  ;
 }
 .link:hover .link .route,
 .link .route:hover{
-  color: #0d6efc;
+  color:#1390e3 ;
 }
 .page{
   @apply bg-slate-50  rounded-md p-4;
   height: calc(100vh - 48px);
   margin-top: 48px;
+}
+.btn{
 }

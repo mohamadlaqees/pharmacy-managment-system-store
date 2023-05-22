@@ -8,9 +8,11 @@ module.exports = {
         secondry:'#d7eeff',
         SWord:'#5fb9f7',
         SReg:'#52b0ed',
+        SSReg:'#1390e3 ',
       },
       height:{
         photo:'753px',
+        page:'100vh',
       },
       translate: {
         '10%': '10%',

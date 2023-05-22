@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { checkContext } from "../layout/Ph-store";
 function SideBar() {
   const check = useContext(checkContext);
-  console.log(check);
   return (
     <Fragment>
       <div
@@ -25,7 +24,7 @@ function SideBar() {
  
           </ul>
         </div>
-        <div class="mt-80  text-gray-500   cursor-pointer ">
+        <div class="  text-gray-500   cursor-pointer absolute bottom-0 mb-4">
           <NavLink
             className=" route  hover:text-red-500 "
             to={"/ph-login"}
