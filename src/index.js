@@ -9,6 +9,8 @@ import PhRegister from "./pages/Ph-register";
 import PhContent from "./pages/Ph-content";
 import PhStore from "./layout/Ph-store";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Purchases from "./pages/Purchases";
+import User from "./pages/User";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {
@@ -26,7 +28,11 @@ const routes = createBrowserRouter([
   {
     path: "ph-store",
     element: <PhStore />,
-    children: [{ index: true, element: <PhContent /> }],
+    children: [
+      { index: true, element: <PhContent /> },
+      { path: "purchases", element:<Purchases/>},
+      { path: "user", element:<User/>},
+    ],
   },
 ]);
 root.render(

@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Checkbox, Divider } from "antd";
+import { useNavigate } from "react-router-dom";
+import { createStaticHandler } from "@remix-run/router";
 
 function Header({ set, check }) {
+  const navigate = useNavigate();
   const CheckboxGroup = Checkbox.Group;
   const plainOptions = ["Apple", "Pear", "Orange"];
   const defaultCheckedList = [];
   const [showN, setShowN] = useState(false);
   const [showF, setShowF] = useState(false);
+  const [showC, setShowC] = useState(false);
+  const [showU, setShowU] = useState(false);
   const onSearch = (value) => console.log(value);
 
   const [checkedList, setCheckedList] = useState(defaultCheckedList);
@@ -25,7 +30,19 @@ function Header({ set, check }) {
     setIndeterminate(false);
     setCheckAll(e.target.checked);
   };
-
+  const cartHandler = () => {
+    setShowC(!showC);
+    !showC ? navigate("purchases") : navigate("/ph-store");
+  };
+  const userHandler=()=>{
+    if(window.location.href==='http://localhost:3000/ph-store/user'){
+    setShowU(!showU);
+    }
+    else{
+      setShowU(showU);
+    }
+    !showU ? navigate("user") : navigate("/ph-store");
+  }
   return (
     <div class=" p-1 flex justify-between   bg-white rounded-md shadow-sm ">
       <div>
@@ -87,6 +104,14 @@ function Header({ set, check }) {
         </InputGroup>
       </div>
       <div class="flex gap-3">
+        <div>
+          <i
+            class={`fa-solid fa-cart-shopping text-xl ${
+              showC ? "text-SSReg" : "text-gray-500"
+            } cursor-pointer transition-all hover:text-SSReg mt-2 mr-2`}
+            onClick={() => cartHandler()}
+          ></i>
+        </div>
         <div class=" border-r-2 border-gray-200 ">
           <i
             class={`fa-solid fa-bell w-fit -rotate-12 text-xl ${
@@ -147,9 +172,14 @@ function Header({ set, check }) {
           </div>
         </div>
         <div>
-          <i class="fa-solid fa-user text-SSReg   transition-all mt-2"></i>
+          <i
+            class={`fa-solid fa-user text-xl ${
+              showU ? "text-SSReg" : "text-gray-500"
+            } cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
+            onClick={() => userHandler()}
+          ></i>
         </div>
-        <div class="">
+        <div class=" ">
           <span class="block text-sm">Mohammad Laqees</span>
           <span class="text-gray-500 block text-sm">Admin</span>
         </div>
