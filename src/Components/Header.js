@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Checkbox, Divider } from "antd";
@@ -14,6 +14,23 @@ function Header({ set, check }) {
   const [showF, setShowF] = useState(false);
   const [showC, setShowC] = useState(false);
   const [showU, setShowU] = useState(false);
+  const popF = useRef();
+  const popN = useRef();
+  const prof = useRef();
+  useEffect(() => {
+    let popHandler = (e) => {
+      if (!popF.current.contains(e.target)) {
+        setShowF(false);
+      }
+      if (!popN.current.contains(e.target)) {
+        setShowN(false);
+      }
+    };
+    document.addEventListener("mousedown", popHandler);
+    return () => {
+      document.removeEventListener("mousedown", popHandler);
+    };
+  });
   const onSearch = (value) => console.log(value);
 
   const [checkedList, setCheckedList] = useState(defaultCheckedList);
@@ -68,11 +85,12 @@ function Header({ set, check }) {
               border: "2px solid #52b0ed",
             }}
           />
-          <InputGroup.Text
+        <div ref={popF}>
+        <InputGroup.Text
             id="basic-addon1"
             class={` flex items-center justify-center ${
               showF ? "bg-SSReg" : "bg-SReg"
-            }  text-white p-2 w-14  cursor-pointer hover:bg-SSReg duration-.3s`}
+            }  text-white p-2 h-full w-14  cursor-pointer hover:bg-SSReg duration-.3s`}
             onClick={() => {
               setShowF(!showF);
             }}
@@ -81,7 +99,7 @@ function Header({ set, check }) {
           </InputGroup.Text>
           <div
             class={`w-80 h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
-              showF ? "block" : "hidden"
+              showF ? "opacity-100 visible" : "opacity-0 invisible"
             } `}
           >
             <div class="p-2  transition-all border border-b-4 border-gray-500">
@@ -101,6 +119,7 @@ function Header({ set, check }) {
               />
             </div>
           </div>
+        </div>
         </InputGroup>
       </div>
       <div class="flex gap-3">
@@ -112,7 +131,7 @@ function Header({ set, check }) {
             onClick={() => cartHandler()}
           ></i>
         </div>
-        <div class=" border-r-2 border-gray-200 ">
+        <div class=" border-r-2 border-gray-200 "  ref={popN}>
           <i
             class={`fa-solid fa-bell w-fit -rotate-12 text-xl ${
               showN ? "text-SSReg" : "text-gray-500"
@@ -120,8 +139,8 @@ function Header({ set, check }) {
             onClick={() => setShowN(!showN)}
           ></i>
           <div
-            class={`w-80 h-80 rounded-md bg-slate-100 absolute right-44 top-12 shadow-md transition duration-.3s overflow-auto ${
-              showN ? "block" : "hidden"
+            class={`w-80 h-80 rounded-md bg-slate-100 absolute right-44 top-12 shadow-md transition-all overflow-auto ${
+              showN ? "opacity-100 visible" : "opacity-0 invisible"
             } `}
           >
             <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
