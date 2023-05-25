@@ -185,7 +185,10 @@ function Header({ set, check }) {
           </div>
         </div>
         <div class=" transition-all  " ref={prof}>
-          <div className="flex gap-3 cursor-pointer" onClick={() => setShowP(!showP)}>
+          <div
+            className="flex gap-3 cursor-pointer"
+            onClick={() => setShowP(!showP)}
+          >
             <div>
               <i
                 class={`fa-solid fa-user text-xl ${"text-SSReg"} cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
@@ -221,7 +224,7 @@ function Header({ set, check }) {
               <div>
                 <Link
                   className="no-underline text-gray-500 hover:text-gray-500"
-                  to={"profile"}
+                  to={"editProfile"}
                 >
                   Edit profile
                 </Link>

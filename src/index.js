@@ -11,6 +11,7 @@ import PhStore from "./layout/Ph-store";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Purchases from "./pages/Purchases";
 import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const routes = createBrowserRouter([
       { index: true, element: <PhContent /> },
       { path: "purchases", element: <Purchases /> },
       { path: "profile", element: <Profile /> },
+      { path: "editProfile", element: <EditProfile /> },
     ],
   },
 ]);
