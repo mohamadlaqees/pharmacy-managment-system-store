@@ -13,7 +13,7 @@ function Header({ set, check }) {
   const [showN, setShowN] = useState(false);
   const [showF, setShowF] = useState(false);
   const [showC, setShowC] = useState(false);
-  const [showU, setShowU] = useState(false);
+  const [showP, setShowP] = useState(false);
   const popF = useRef();
   const popN = useRef();
   const prof = useRef();
@@ -24,6 +24,9 @@ function Header({ set, check }) {
       }
       if (!popN.current.contains(e.target)) {
         setShowN(false);
+      }
+      if (!prof.current.contains(e.target)) {
+        setShowP(false);
       }
     };
     document.addEventListener("mousedown", popHandler);
@@ -50,14 +53,6 @@ function Header({ set, check }) {
   const cartHandler = () => {
     setShowC(!showC);
     !showC ? navigate("purchases") : navigate("/ph-store");
-  };
-  const userHandler = () => {
-    if (window.location.href === "http://localhost:3000/ph-store/user") {
-      setShowU(!showU);
-    } else {
-      setShowU(showU);
-    }
-    !showU ? navigate("user") : navigate("/ph-store");
   };
   return (
     <div class=" p-1 flex justify-between   bg-white rounded-md shadow-sm ">
@@ -189,17 +184,30 @@ function Header({ set, check }) {
             </div>
           </div>
         </div>
-        <div>
-          <i
-            class={`fa-solid fa-user text-xl ${
-              showU ? "text-SSReg" : "text-gray-500"
-            } cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
-            onClick={() => userHandler()}
-          ></i>
-        </div>
-        <div class=" ">
-          <span class="block text-sm">Mohammad Laqees</span>
-          <span class="text-gray-500 block text-sm">Admin</span>
+        <div
+          class="cursor-pointer transition-all flex gap-3"
+          onClick={() => setShowP(!showP)}
+          ref={prof}
+        >
+          <div>
+            <i
+              class={`fa-solid fa-user text-xl ${"text-SSReg"} cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
+            ></i>
+          </div>
+          <div class=" ">
+            <span class="block text-sm">Mohammad Laqees</span>
+            <span class="text-gray-500 block text-sm">Admin</span>
+          </div>
+          <div
+            class={`w-48 h-80 rounded-md bg-slate-100 absolute right-0 top-12 shadow-md transition duration-.3s overflow-auto ${
+              showP ? "opacity-100 visible" : "opacity-0 invisible"
+            } `}
+          >
+            <div class="p-2 flex  hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
+              <div></div>
+              <div>Profile</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
