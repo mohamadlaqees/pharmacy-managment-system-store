@@ -1,4 +1,4 @@
-import React, { useState,useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Checkbox, Divider } from "antd";
@@ -51,15 +51,14 @@ function Header({ set, check }) {
     setShowC(!showC);
     !showC ? navigate("purchases") : navigate("/ph-store");
   };
-  const userHandler=()=>{
-    if(window.location.href==='http://localhost:3000/ph-store/user'){
-    setShowU(!showU);
-    }
-    else{
+  const userHandler = () => {
+    if (window.location.href === "http://localhost:3000/ph-store/user") {
+      setShowU(!showU);
+    } else {
       setShowU(showU);
     }
     !showU ? navigate("user") : navigate("/ph-store");
-  }
+  };
   return (
     <div class=" p-1 flex justify-between   bg-white rounded-md shadow-sm ">
       <div>
@@ -85,41 +84,41 @@ function Header({ set, check }) {
               border: "2px solid #52b0ed",
             }}
           />
-        <div ref={popF}>
-        <InputGroup.Text
-            id="basic-addon1"
-            class={` flex items-center justify-center ${
-              showF ? "bg-SSReg" : "bg-SReg"
-            }  text-white p-2 h-full w-14  cursor-pointer hover:bg-SSReg duration-.3s`}
-            onClick={() => {
-              setShowF(!showF);
-            }}
-          >
-            <i class="fa-solid fa-sitemap"></i>
-          </InputGroup.Text>
-          <div
-            class={`w-80 h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
-              showF ? "opacity-100 visible" : "opacity-0 invisible"
-            } `}
-          >
-            <div class="p-2  transition-all border border-b-4 border-gray-500">
-              <Checkbox
-                indeterminate={indeterminate}
-                onChange={onCheckAllChange}
-                checked={checkAll}
-                class="mb-0"
-              >
-                Check all
-              </Checkbox>
-              <Divider />
-              <CheckboxGroup
-                options={plainOptions}
-                value={checkedList}
-                onChange={onChange}
-              />
+          <div ref={popF}>
+            <InputGroup.Text
+              id="basic-addon1"
+              class={` flex items-center justify-center ${
+                showF ? "bg-SSReg" : "bg-SReg"
+              }  text-white p-2 h-full w-14  cursor-pointer hover:bg-SSReg duration-.3s`}
+              onClick={() => {
+                setShowF(!showF);
+              }}
+            >
+              <i class="fa-solid fa-sitemap"></i>
+            </InputGroup.Text>
+            <div
+              class={`w-80 h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
+                showF ? "opacity-100 visible" : "opacity-0 invisible"
+              } `}
+            >
+              <div class="p-2  transition-all border border-b-4 border-gray-500">
+                <Checkbox
+                  indeterminate={indeterminate}
+                  onChange={onCheckAllChange}
+                  checked={checkAll}
+                  class="mb-0"
+                >
+                  Check all
+                </Checkbox>
+                <Divider />
+                <CheckboxGroup
+                  options={plainOptions}
+                  value={checkedList}
+                  onChange={onChange}
+                />
+              </div>
             </div>
           </div>
-        </div>
         </InputGroup>
       </div>
       <div class="flex gap-3">
@@ -131,7 +130,7 @@ function Header({ set, check }) {
             onClick={() => cartHandler()}
           ></i>
         </div>
-        <div class=" border-r-2 border-gray-200 "  ref={popN}>
+        <div class=" border-r-2 border-gray-200 " ref={popN}>
           <i
             class={`fa-solid fa-bell w-fit -rotate-12 text-xl ${
               showN ? "text-SSReg" : "text-gray-500"
