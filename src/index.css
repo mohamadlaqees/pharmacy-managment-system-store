@@ -16,6 +16,13 @@ html body {
   @apply no-underline  ml-4 text-gray-500 ;
   transition: .3s;
 }
+.route.active{
+  color:#1390e3  ;
+}
+
+.route:hover{
+  color:#1390e3  ;
+}
 .link .route.active{
   color:#1390e3  ;
 }

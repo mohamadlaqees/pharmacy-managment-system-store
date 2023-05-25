@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Checkbox, Divider } from "antd";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink ,Link} from "react-router-dom";
 
 function Header({ set, check }) {
   const navigate = useNavigate();
@@ -12,11 +12,11 @@ function Header({ set, check }) {
   const defaultCheckedList = [];
   const [showN, setShowN] = useState(false);
   const [showF, setShowF] = useState(false);
-  const [showC, setShowC] = useState(false);
   const [showP, setShowP] = useState(false);
   const popF = useRef();
   const popN = useRef();
   const prof = useRef();
+  // const cart = useRef();
   useEffect(() => {
     let popHandler = (e) => {
       if (!popF.current.contains(e.target)) {
@@ -49,10 +49,6 @@ function Header({ set, check }) {
     setCheckedList(e.target.checked ? plainOptions : []);
     setIndeterminate(false);
     setCheckAll(e.target.checked);
-  };
-  const cartHandler = () => {
-    setShowC(!showC);
-    !showC ? navigate("purchases") : navigate("/ph-store");
   };
   return (
     <div class=" p-1 flex justify-between   bg-white rounded-md shadow-sm ">
@@ -118,12 +114,9 @@ function Header({ set, check }) {
       </div>
       <div class="flex gap-3">
         <div>
-          <i
-            class={`fa-solid fa-cart-shopping text-xl ${
-              showC ? "text-SSReg" : "text-gray-500"
-            } cursor-pointer transition-all hover:text-SSReg mt-2 mr-2`}
-            onClick={() => cartHandler()}
-          ></i>
+          <NavLink to={"purchases"} className="route">
+            <i class={`fa-solid fa-cart-shopping text-xl mt-2`}></i>
+          </NavLink>
         </div>
         <div class=" border-r-2 border-gray-200 " ref={popN}>
           <i
