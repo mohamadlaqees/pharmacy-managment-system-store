@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Checkbox, Divider } from "antd";
 import { useNavigate } from "react-router-dom";
-import { createStaticHandler } from "@remix-run/router";
+import { Link } from "react-router-dom";
 
 function Header({ set, check }) {
   const navigate = useNavigate();
@@ -184,28 +184,48 @@ function Header({ set, check }) {
             </div>
           </div>
         </div>
-        <div
-          class="cursor-pointer transition-all flex gap-3"
-          onClick={() => setShowP(!showP)}
-          ref={prof}
-        >
-          <div>
-            <i
-              class={`fa-solid fa-user text-xl ${"text-SSReg"} cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
-            ></i>
-          </div>
-          <div class=" ">
-            <span class="block text-sm">Mohammad Laqees</span>
-            <span class="text-gray-500 block text-sm">Admin</span>
+        <div class=" transition-all  " ref={prof}>
+          <div className="flex gap-3 cursor-pointer" onClick={() => setShowP(!showP)}>
+            <div>
+              <i
+                class={`fa-solid fa-user text-xl ${"text-SSReg"} cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
+              ></i>
+            </div>
+            <div class=" ">
+              <span class="block text-sm">Mohammad Laqees</span>
+              <span class="text-gray-500 block text-sm">Admin</span>
+            </div>
           </div>
           <div
             class={`w-48 h-80 rounded-md bg-slate-100 absolute right-0 top-12 shadow-md transition duration-.3s overflow-auto ${
               showP ? "opacity-100 visible" : "opacity-0 invisible"
             } `}
           >
-            <div class="p-2 flex  hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
-              <div></div>
-              <div>Profile</div>
+            <div class="p-2 flex gap-3 justify-center  hover:bg-slate-200  border border-b-4 border-gray-500 hover:text-SSReg transition-all">
+              <div>
+                <i class="fa-regular fa-user"></i>{" "}
+              </div>
+              <div>
+                <Link
+                  className="no-underline text-gray-500 hover:text-gray-500"
+                  to={"profile"}
+                >
+                  My profile
+                </Link>
+              </div>
+            </div>
+            <div class="p-2 flex gap-3 justify-center  hover:bg-slate-200  border border-b-4 border-gray-500 hover:text-SSReg transition-all">
+              <div>
+                <i class="fa-regular fa-pen-to-square"></i>{" "}
+              </div>
+              <div>
+                <Link
+                  className="no-underline text-gray-500 hover:text-gray-500"
+                  to={"profile"}
+                >
+                  Edit profile
+                </Link>
+              </div>
             </div>
           </div>
         </div>
