@@ -20,7 +20,9 @@ module.exports = {
       width:{
         '88%':'88%',
         '12%':'12%',
-        'custom':'96.5%'
+        'custom':'96.5%',
+        'form':'500px',
+        'photo':'860px'
       },
       transitionDuration:{
         '.3s':'.3s'
