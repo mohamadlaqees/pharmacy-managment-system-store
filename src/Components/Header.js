@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Checkbox, Divider } from "antd";
 import { useNavigate } from "react-router-dom";
-import { NavLink ,Link} from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Header({ set, check }) {
   const navigate = useNavigate();
@@ -16,7 +16,6 @@ function Header({ set, check }) {
   const popF = useRef();
   const popN = useRef();
   const prof = useRef();
-  // const cart = useRef();
   useEffect(() => {
     let popHandler = (e) => {
       if (!popF.current.contains(e.target)) {
