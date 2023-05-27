@@ -21,6 +21,12 @@ function SideBar() {
                 {check ? "" : "Home"}
               </NavLink>
             </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"my-orders"} end>
+                <i class="fas fa-money-check "></i>
+                {check ? "" : "My Orders"}
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div class="  text-gray-500   cursor-pointer absolute bottom-0 mb-4">
