@@ -1,31 +1,36 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
 
 function Profile() {
   return (
-    <div className="page">
-      <div class="w-form  rounded-md flex justify-center items-center   ">
-        <Form onSubmit={"x"}>
-          <Form.Group className="mb-3 " controlId="formBasicName">
-            <Form.Label class="text-SWord">First name</Form.Label>
-            <Form.Control name="Fname" type="text" placeholder="First name" />
-          </Form.Group>
-
-          <Form.Group className="mb-3 " controlId="formBasicLastName">
-            <Form.Label class="text-SWord">Last name</Form.Label>
-            <Form.Control name="Lname" type="text" />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicPhone">
-            <Form.Label class="text-SWord">Phone</Form.Label>
-            <Form.Control name="phone" type="phone" placeholder="Phone" />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicAddress">
-            <Form.Label class="text-SWord">Address</Form.Label>
-            <Form.Control name="address" type="address" placeholder="Address" />
-          </Form.Group>
-        </Form>
+    <div className="page flex justify-center gap-4">
+      <div className="rounded-md bg-white shadow-md p-4 w-64 h-96  mt-24  ">
+        <div className="p-3">
+              <img src="/images/user.jpg" alt="" className="rounded-full" />
+        </div>
+        <span className="p-2 block text-center font-bold">Mohammad laqees</span>
+        <span className="p-2 block text-center text-font2">User</span>
+      </div>
+      <div className="rounded-md bg-white shadow-md p-4 w-form h-96   mt-24  ">
+        <div className="flex justify-between mb-2 border-b-2 border-slate-100 p-3 text-font1">
+          <span className="block">Full name</span>
+          <span className="text-font2 mr-56 block">bla bla</span>
+        </div>
+        <div className="flex justify-between mb-2 border-b-2 border-slate-100 p-3 text-font1">
+          <span className="block"> Email</span>
+          <span className="text-font2 mr-56 block">bla bla</span>
+        </div>
+        <div className="flex justify-between mb-2 border-b-2 border-slate-100 p-3 text-font1">
+          <span className="block"> Phone</span>
+          <span className="text-font2 mr-56 block">bla bla</span>
+        </div>
+        <div className="flex justify-between mb-2 border-b-2 border-slate-100 p-3 text-font1">
+          <span className="block"> Address</span>
+          <span className="text-font2 mr-56 block">bla bla</span>
+        </div>
+        <div className="flex justify-between mb-2  p-3 text-font1">
+          <span className="block"> Date</span>
+          <span className="text-font2 mr-56 block">bla bla</span>
+        </div>
       </div>
     </div>
   );
