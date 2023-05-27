@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 function Profile() {
   return (
     <div className="page">
-      <div class="w-form  rounded-md flex justify-center items-center relative top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 ">
+      <div class="w-form  rounded-md flex justify-center items-center   ">
         <Form onSubmit={"x"}>
           <Form.Group className="mb-3 " controlId="formBasicName">
             <Form.Label class="text-SWord">First name</Form.Label>
