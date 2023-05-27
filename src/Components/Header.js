@@ -117,6 +117,11 @@ function Header({ set, check }) {
             <i class={`fa-solid fa-cart-shopping text-xl mt-2`}></i>
           </NavLink>
         </div>
+        <div>
+          <NavLink to={"upload-prescription"} className="route">
+            <i class={`	fas fa-file-medical text-xl mt-2` }title={'order by only uploading your prescription'}></i>
+          </NavLink>
+        </div>
         <div class=" border-r-2 border-gray-200 " ref={popN}>
           <i
             class={`fa-solid fa-bell w-fit -rotate-12 text-xl ${

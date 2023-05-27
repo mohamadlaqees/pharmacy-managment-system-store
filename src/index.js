@@ -12,6 +12,8 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Purchases from "./pages/Purchases";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
+import UploadPrescription from "./pages/UploadPrescription";
+import MyOrders from "./pages/MyOrders";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {
@@ -33,6 +35,8 @@ const routes = createBrowserRouter([
       { index: true, element: <PhContent /> },
       { path: "purchases", element: <Purchases /> },
       { path: "profile", element: <Profile /> },
+      { path: "upload-prescription", element: <UploadPrescription /> },
+      { path: "my-orders", element: <MyOrders /> },
       { path: "editProfile", element: <EditProfile /> },
     ],
   },
