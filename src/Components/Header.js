@@ -88,7 +88,7 @@ function Header({ set, check }) {
             </InputGroup.Text>
             <div
               class={`w-80 h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
-                showF ? "opacity-100 visible" : "opacity-0 invisible"
+                showF ? "opacity-100 visible z-10" : "opacity-0 invisible"
               } `}
             >
               <div class="p-2  transition-all border border-b-4 border-gray-500">
@@ -125,8 +125,8 @@ function Header({ set, check }) {
             onClick={() => setShowN(!showN)}
           ></i>
           <div
-            class={`w-80 h-80 rounded-md bg-slate-100 absolute right-44 top-12 shadow-md transition-all overflow-auto ${
-              showN ? "opacity-100 visible" : "opacity-0 invisible"
+            class={`w-80 h-80 rounded-md bg-slate-100 absolute right-44 top-12 shadow-md transition-all overflow-auto  ${
+              showN ? "opacity-100 visible " : "opacity-0 invisible"
             } `}
           >
             <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
