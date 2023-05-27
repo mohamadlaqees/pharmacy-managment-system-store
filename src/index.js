@@ -35,6 +35,7 @@ const routes = createBrowserRouter([
       { index: true, element: <PhContent /> },
       { path: "purchases", element: <Purchases /> },
       { path: "profile", element: <Profile /> },
+      { path: "editProfile/profile", element: <Profile /> },
       { path: "upload-prescription", element: <UploadPrescription /> },
       { path: "my-orders", element: <MyOrders /> },
       { path: "editProfile", element: <EditProfile /> },
