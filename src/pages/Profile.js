@@ -5,7 +5,7 @@ function Profile() {
     <div className="page flex justify-center gap-4">
       <div className="rounded-md bg-white shadow-md p-4 w-64 h-96  mt-24  ">
         <div className="p-3">
-              <img src="/images/user.jpg" alt="" className="rounded-full" />
+          <img src="/images/user.jpg" alt="" className="rounded-full" />
         </div>
         <span className="p-2 block text-center font-bold">Mohammad laqees</span>
         <span className="p-2 block text-center text-font2">User</span>
