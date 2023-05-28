@@ -33,7 +33,7 @@ export default function PhLogin() {
     validationSchema: SignupSchema,
     onSubmit: async () => {
       navigate("/ph-store", { replace: true });
-      console.log('login')
+      console.log("login");
       msg("success", "Login success");
     },
   });
@@ -77,7 +77,12 @@ export default function PhLogin() {
               />
             </Form.Group>
             <div className="d-grid gap-2 mb-8">
-              <button type="submit" class='p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s'>Login</button>
+              <button
+                type="submit"
+                class="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
+              >
+                Login
+              </button>
             </div>
             <span class=" block text-center text-SReg">
               Don't have an account{" ? "}

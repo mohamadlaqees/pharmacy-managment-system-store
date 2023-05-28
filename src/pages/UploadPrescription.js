@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function UploadPrescription() {
-  return (
-    <div className='page'>UploadPrescription</div>
-  )
+  return <div className="page">UploadPrescription</div>;
 }
 
-export default UploadPrescription
+export default UploadPrescription;

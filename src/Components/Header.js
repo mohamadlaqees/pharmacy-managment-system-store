@@ -119,7 +119,10 @@ function Header({ set, check }) {
         </div>
         <div>
           <NavLink to={"upload-prescription"} className="route">
-            <i class={`	fas fa-file-medical text-xl mt-2` }title={'order by only uploading your prescription'}></i>
+            <i
+              class={`	fas fa-file-medical text-xl mt-2`}
+              title={"order by only uploading your prescription"}
+            ></i>
           </NavLink>
         </div>
         <div class=" border-r-2 border-gray-200 " ref={popN}>
