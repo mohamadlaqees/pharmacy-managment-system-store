@@ -45,7 +45,7 @@ function EditProfile() {
     validationSchema: SignupSchema,
     onSubmit: async () => {
       console.log("registered");
-      msg("success", "register success");
+      msg("success", "Updated");
       navigate("profile");
     },
   });
