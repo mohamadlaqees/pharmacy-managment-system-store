@@ -4,7 +4,6 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        primary: '#81d6fd',
         secondry:'#d7eeff',
         SWord:'#5fb9f7',
         SReg:'#52b0ed',
@@ -15,6 +14,7 @@ module.exports = {
       height:{
         photo:'753px',
         page:'100vh',
+        form:'420px'
       },
       translate: {
         '10%': '10%',
