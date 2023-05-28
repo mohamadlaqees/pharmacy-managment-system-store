@@ -8,7 +8,7 @@ function SideBar() {
       <div
         class={`shadow-xl ${
           check ? "w-14" : "w-12%"
-        }  rounded-m transition-all h-page`}
+        }  rounded-m transition-all h-page phone:w-14`}
       >
         <div class="text-SReg text-3xl  mt-2 border-b-2">
           <i class="fa-solid fa-hospital ml-3 mb-2"></i>
