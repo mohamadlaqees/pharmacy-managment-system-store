@@ -8,7 +8,7 @@ import PhLogin from "./pages/Ph-login";
 import PhRegister from "./pages/Ph-register";
 import PhContent from "./pages/Ph-content";
 import PhStore from "./layout/Ph-store";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css?v=2";
 import Purchases from "./pages/Purchases";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
