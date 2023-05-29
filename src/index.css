@@ -16,7 +16,7 @@ html body {
   padding: 0 20px;
 }
 .link {
-  @apply pt-4 pb-4  relative cursor-pointer rounded-md;
+  @apply pt-4 pb-3  relative cursor-pointer rounded-md;
 }
 .link .route i {
   @apply mr-5;
