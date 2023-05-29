@@ -50,14 +50,14 @@ function Header({ set, check }) {
     setCheckAll(e.target.checked);
   };
   return (
-    <div class=" p-1 flex justify-between   bg-white rounded-md shadow-sm ">
-      <div>
+    <div class=" p-1 flex justify-center md:justify-between   bg-white rounded-md shadow-sm ">
+      <div className="hidden show:block">
         <i
-          class="fa fa-light fa-align-left  text-gray-500 cursor-pointer hover:text-SSReg text-xl transition-all mt-2 ml-2"
+          class="  fa fa-light fa-align-left  text-gray-500 cursor-pointer hover:text-SSReg text-xl transition-all mt-2 ml-2"
           onClick={() => set(!check)}
         ></i>
       </div>
-      <div class="w-1/2">
+      <div class="ml-5 w-1/2 show:w-1/2 hidden md:block ">
         <InputGroup>
           <InputGroup.Text
             id="basic-addon1"
@@ -111,7 +111,7 @@ function Header({ set, check }) {
           </div>
         </InputGroup>
       </div>
-      <div class="flex gap-3">
+      <div class="flex gap-3 ">
         <div>
           <NavLink to={"purchases"} className="route">
             <i class={`fa-solid fa-cart-shopping text-xl mt-2`}></i>
@@ -133,7 +133,7 @@ function Header({ set, check }) {
             onClick={() => setShowN(!showN)}
           ></i>
           <div
-            class={`w-80 h-80 rounded-md bg-slate-100 absolute right-44 top-12 shadow-md transition-all overflow-auto  ${
+            class={`w-80 h-80 rounded-md bg-slate-100 absolute sm:top-12 top-12 right-16 sm:right-96 md:right-44 md:top-12 shadow-md transition-all overflow-auto  ${
               showN ? "opacity-100 visible " : "opacity-0 invisible"
             } `}
           >
@@ -200,7 +200,7 @@ function Header({ set, check }) {
             </div>
           </div>
           <div
-            class={`w-48 h-80 rounded-md bg-slate-100 absolute right-0 top-12 shadow-md transition duration-.3s overflow-auto ${
+            class={`w-48 h-80 rounded-md bg-slate-100 absolute top-12 right-8 sm:top-12 sm:right-44  md:right-0 md:top-12 shadow-md transition duration-.3s overflow-auto ${
               showP ? "opacity-100 visible" : "opacity-0 invisible"
             } `}
           >

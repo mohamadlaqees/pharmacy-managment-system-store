@@ -12,8 +12,12 @@ function Dashboard() {
         <CheckProvider value={check}>
           <SideBar />
         </CheckProvider>
-        <div class={` ${check ? "w-full" : "w-88%"}`}>
-          <div class={`fixed ${check ? "w-custom" : "w-88%"} z-20 hidden md:block `}>
+        <div class={`w-full ${check ? "show:w-full" : "show:w-88%"}`}>
+          <div
+            class={`fixed w-custom2 ${
+              check ? "show:w-custom" : "show:w-88%"
+            } z-20 `}
+          >
             <Header set={setCheck} check={check} />
           </div>
           <Outlet />
