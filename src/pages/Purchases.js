@@ -1,17 +1,13 @@
 import React from "react";
 import ProductTile from "../Components/ProductTile";
-import { Col, Container, Row } from "react-bootstrap";
-
+import { Button, Col, Container, Row } from "react-bootstrap";
+import AddressData from "../Components/AddressData";
 function Purchases() {
   return (
     <div className="page">
-      <Container class="mt-10">
-        <Row>
-          <Col xs={12} md={3}>address data</Col>
-          <Col md={9} xs={12}>
-            <ProductTile />
-          </Col>
-        </Row>
+      <Container className="mt-1">
+      <AddressData />
+        <ProductTile />
       </Container>
     </div>
   );

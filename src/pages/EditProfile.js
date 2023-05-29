@@ -64,7 +64,7 @@ function EditProfile() {
           <div className="d-grid gap-2 mb-8">
             <button
               type="submit"
-              class=" mt-3 p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s  text-center"
+              className=" mt-3 p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s  text-center"
             >
               Save
             </button>
