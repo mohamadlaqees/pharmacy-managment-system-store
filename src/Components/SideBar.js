@@ -8,7 +8,7 @@ function SideBar() {
       <div
         class={` hidden show:block shadow-xl ${
           check ? "w-14" : "w-12%"
-        }  rounded-m transition-all h-page `}
+        }  rounded-m transition-all  `}
       >
         <div class="text-SReg text-3xl  mt-2 border-b-2">
           <i class="fa-solid fa-hospital ml-3 mb-2"></i>
@@ -41,9 +41,9 @@ function SideBar() {
         </div>
       </div>
       <div
-        class={` block  show:hidden show:invisible shadow-xl ${
+        class={` h-mobileS  block  show:hidden show:invisible shadow-xl ${
           check ? "w-14" : "w-14"
-        }  rounded-m transition-all h-page `}
+        }  rounded-m transition-all sm:h-page  `}
       >
         <div class="text-SReg text-3xl  mt-2 border-b-2">
           <i class="fa-solid fa-hospital ml-2 mb-2"></i>
@@ -72,7 +72,7 @@ function SideBar() {
             </li>
           </ul>
         </div>
-        <div class="  text-gray-500   cursor-pointer absolute bottom-0 mb-4">
+        <div class="  text-gray-500   cursor-pointer absolute -bottom-16 sm:bottom-0 sm:mb-4">
           <NavLink
             className=" route  hover:text-red-500 "
             to={"/ph-login"}
