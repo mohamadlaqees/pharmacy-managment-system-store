@@ -46,11 +46,14 @@ export default function Register() {
   });
   return (
     <React.Fragment>
-      <div class="flex justify-between">
-        <div class="w-form  m-auto relative translate-y-1/2  text-start shadow-xl p-5 rounded-md bg-secondry xl:-translate-x-10% xl:bottom-48 tra">
+      <div class=" xl:flex xl:justify-between">
+        <div class="w-96 mt-20 ml-auto mr-auto   xl:w-form h-fit relative xl:m-auto shadow-xl p-5 rounded-md bg-secondry  ">
           <Form onSubmit={formik.handleSubmit}>
-            <div class="flex gap-3">
-              <Form.Group className="col-md-6 " controlId="formBasicName">
+            <div class="xl:flex xl:gap-3">
+              <Form.Group
+                className="mb-3 xl:col-md-6 "
+                controlId="formBasicName"
+              >
                 <Form.Label class="text-SWord">First name</Form.Label>
                 <Form.Control
                   name="Fname"
@@ -68,7 +71,10 @@ export default function Register() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group className="col-md-6 " controlId="formBasicLastName">
+              <Form.Group
+                className="mb-3 xl:col-md-6 "
+                controlId="formBasicLastName"
+              >
                 <Form.Label class="text-SWord">Last name</Form.Label>
                 <Form.Control
                   name="Lname"
@@ -87,8 +93,11 @@ export default function Register() {
               </Form.Group>
             </div>
 
-            <div class="flex gap-3">
-              <Form.Group className="col-md-6" controlId="formBasicEmail">
+            <div class="xl:flex xl:gap-3">
+              <Form.Group
+                className="mb-3 xl:col-md-6"
+                controlId="formBasicEmail"
+              >
                 <Form.Label class="text-SWord">Email</Form.Label>
                 <Form.Control
                   name="email"
@@ -100,16 +109,17 @@ export default function Register() {
                   isValid={formik.touched.email && !formik.errors.email}
                   onBlur={formik.handleBlur}
                 />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
+
                 <Form.Control.Feedback type="invalid">
                   {formik.errors.email}
                 </Form.Control.Feedback>
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group className="col-md-6" controlId="formBasicPassword">
+              <Form.Group
+                className="mb-3 xl:col-md-6"
+                controlId="formBasicPassword"
+              >
                 <Form.Label class="text-SWord">Password</Form.Label>
                 <Form.Control
                   name="password"
