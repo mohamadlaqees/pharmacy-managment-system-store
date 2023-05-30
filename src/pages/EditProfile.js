@@ -51,8 +51,9 @@ function EditProfile() {
   });
 
   return (
-    <Form onSubmit={formik.handleSubmit}>
-      <div className="page flex justify-center gap-4">
+    <div className="page">
+      <Form onSubmit={formik.handleSubmit}>
+      <div className="md:flex md:justify-center md:gap-4">
         <div className="rounded-md bg-white shadow-md p-4 w-64 h-form  mt-24  ">
           <div className="p-3">
             <img src="/images/user.jpg" alt="" className="rounded-full" />
@@ -164,6 +165,7 @@ function EditProfile() {
         </div>
       </div>
     </Form>
+    </div>
   );
 }
 
