@@ -5,7 +5,7 @@ import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
 function ProductTile() {
   return (
     <ol className="list-group">
-      <li className="list-group-item d-flex justify-content-between shadow-sm ">
+      <li className="list-group-item border-info d-flex justify-content-between  mb-1 ">
         <Container>
           <Row>
             <Col sm={12} md={7} className="d-flex justify-content-start">

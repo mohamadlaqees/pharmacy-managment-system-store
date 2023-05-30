@@ -1,18 +1,11 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
-import {
-  Alert,
-  Col,
-  Container,
-  Dropdown,
-  DropdownButton,
-  Row,
-} from "react-bootstrap";
-
+import { Alert, Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
+import OrderCard from "../Components/OrderCard";
 function MyOrders() {
   return (
-    <div className="page ">
-      <Container>
+    <div className="page bg-SSReg">
+      <div className="ml-5">
         <Row>
           <Col xs={1} className="p-20px">
             <DropdownButton className="primary-color" title={"Status"}>
@@ -34,6 +27,7 @@ function MyOrders() {
           </Col>
           <Col xs={4}>
             <Alert
+
               className="d-flex justify-content-center align-items-center "
               style={{ maxHeight: "40px" }}
             >
@@ -41,7 +35,8 @@ function MyOrders() {
             </Alert>
           </Col>
         </Row>
-      </Container>
+        <OrderCard />
+      </div>
     </div>
   );
 }
