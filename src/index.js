@@ -14,11 +14,11 @@ import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import UploadPrescription from "./pages/UploadPrescription";
 import MyOrders from "./pages/MyOrders";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import Product from "./pages/Product";
-=======
+// =======
 import Interactions from "./pages/Interactions";
->>>>>>> 56af85f482a414774db21a2b40720669057f8ee3
+// >>>>>>> 56af85f482a414774db21a2b40720669057f8ee3
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {

@@ -40,7 +40,7 @@ function Product() {
                 Add to cart
               </button>
             </div>
-            <div className="mt-2">
+            <div className="mt-5">
               <div className="menu" onClick={() => setShow1(!show1)}>
                 <div className="flex justify-between">
                   Product Details
