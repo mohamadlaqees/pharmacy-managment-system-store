@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { checkContext } from "../layout/Ph-store";
 function SideBar() {
@@ -30,7 +30,7 @@ function SideBar() {
             <li className={`link`}>
               <NavLink className="route" to={"interaction"} end>
                 <i class="	fas fa-compress-alt "></i>
-                {check ? "" :"Drugs Interction"}
+                {check ? "" :"Interction"}
               </NavLink>
             </li>
           </ul>
@@ -63,6 +63,26 @@ function SideBar() {
                 </span>
                 <span className="invisible show:visible">
                   {check ? "" : "Home"}
+                </span>
+              </NavLink>
+            </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"my-orders"} end>
+                <span>
+                  <i class="fas fa-money-check "></i>
+                </span>
+                <span className="invisible show:visible">
+                  {check ? "" : "My Orders"}
+                </span>
+              </NavLink>
+            </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"interactions"} end>
+                <span>
+                  <i class="fas fa-compress-alt"></i>
+                </span>
+                <span className="invisible show:visible">
+                  {check ? "" : "Interactions"}
                 </span>
               </NavLink>
             </li>
