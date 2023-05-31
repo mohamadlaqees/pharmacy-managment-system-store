@@ -44,7 +44,7 @@ function Product() {
               <div className="menu" onClick={() => setShow1(!show1)}>
                 <div className="flex justify-between">
                   Product Details
-                  <i class="fa-solid fa-arrow-down"></i>
+                  <i class="fa-solid fa-arrow-right"></i>
                 </div>
               </div>
               <div className={`drop ${show1 ? "drop active" : "drop"}`}>
@@ -56,7 +56,7 @@ function Product() {
               <div className="menu" onClick={() => setShow2(!show2)}>
                 <div className="flex justify-between">
                   Delivery Info
-                  <i class="fa-solid fa-arrow-down"></i>
+                  <i class="fa-solid fa-arrow-right"></i>
                 </div>
               </div>
               <div className={`drop ${show2 ? "drop active" : "drop"}`}>
