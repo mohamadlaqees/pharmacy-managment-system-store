@@ -20,8 +20,8 @@ function OrderCard() {
       }
     }, [expanded]);
   return (
-    <Container className="shadow  rounded p-2 ">
-        <Card border="primary">
+    <Container className="rounded p-2 "  > 
+        <Card className="">
           <Card.Header className="text-center">
             <Row>
               <Col md={5}>Datete</Col>

@@ -14,6 +14,7 @@ import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import UploadPrescription from "./pages/UploadPrescription";
 import MyOrders from "./pages/MyOrders";
+import Interactions from "./pages/Interactions";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {
@@ -38,6 +39,7 @@ const routes = createBrowserRouter([
       { path: "editProfile/profile", element: <Profile /> },
       { path: "upload-prescription", element: <UploadPrescription /> },
       { path: "my-orders", element: <MyOrders /> },
+      { path: "interaction", element: <Interactions /> },
       { path: "editProfile", element: <EditProfile /> },
     ],
   },
