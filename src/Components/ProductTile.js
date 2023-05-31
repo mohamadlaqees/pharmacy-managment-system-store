@@ -22,9 +22,9 @@ function ProductTile() {
             >
               <div style={{ marginLeft: "5%" }}> Price * Quantity</div>
               <ButtonGroup style={{ marginRight: "10px" }}>
-                <Button variant="outline-secondary">-</Button>
+                <Button variant="outline" style={{border:'1px solid #1390e3'}} >-</Button>
                 <div id="btnGroupAddon">14</div>
-                <Button variant="outline-secondary">+</Button>
+                <Button variant ='outline' style={{border:'1px solid #1390e3'}} className="">+</Button>
               </ButtonGroup>
               <span>
                 <i className="far fa-trash-alt link-danger fs-5"></i>

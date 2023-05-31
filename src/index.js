@@ -14,7 +14,11 @@ import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import UploadPrescription from "./pages/UploadPrescription";
 import MyOrders from "./pages/MyOrders";
+<<<<<<< HEAD
 import Product from "./pages/Product";
+=======
+import Interactions from "./pages/Interactions";
+>>>>>>> 56af85f482a414774db21a2b40720669057f8ee3
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {
@@ -39,6 +43,7 @@ const routes = createBrowserRouter([
       { path: "editProfile/profile", element: <Profile /> },
       { path: "upload-prescription", element: <UploadPrescription /> },
       { path: "my-orders", element: <MyOrders /> },
+      { path: "interaction", element: <Interactions /> },
       { path: "editProfile", element: <EditProfile /> },
       { path: "product/:id", element: <Product /> },
     ],
