@@ -15,6 +15,9 @@ module.exports = {
         photo: "753px",
         page: "100vh",
         form: "420px",
+        small:'544px',
+        mobileC: "969px",
+        mobileS: "1011px",
       },
       translate: {
         "10%": "10%",

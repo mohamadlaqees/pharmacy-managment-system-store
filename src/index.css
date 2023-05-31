@@ -5,9 +5,9 @@ html body {
   margin: 0;
   font-family: "IBM Plex Sans", sans-serif;
 }
-#root {
-  height: 100vh;
-}
+/* #root{
+  height: 2000px;
+} */
 #btnGroupAddon {
   background-color: #1390e3;
   color: white;
@@ -44,4 +44,10 @@ html body {
   height: calc(100vh - 48px);
   margin-top: 48px;
   overflow: auto;
+}
+
+@media (max-width: 640px) {
+  .page {
+    height: 964px;
+  }
 }

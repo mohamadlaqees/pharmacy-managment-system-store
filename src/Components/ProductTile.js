@@ -15,7 +15,11 @@ function ProductTile() {
                 Dosage form
               </div>
             </Col>
-            <Col sm={12} md={4} className="d-flex justify-content-between align-items-sm-center">
+            <Col
+              sm={12}
+              md={4}
+              className="d-flex justify-content-between align-items-sm-center"
+            >
               <div style={{ marginLeft: "5%" }}> Price * Quantity</div>
               <ButtonGroup style={{ marginRight: "10px" }}>
                 <Button variant="outline" style={{border:'1px solid #1390e3'}} >-</Button>

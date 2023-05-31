@@ -1,24 +1,24 @@
-import React from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
-import ProductTile from './ProductTile'
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import ProductTile from "./ProductTile";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function OrderCard() {
-    const [expanded, setExpanded] = useState(false);
-    const expand = () => {
-      setExpanded(!expanded);
-    };
-    useEffect(() => {
-      const card = document.getElementById("card-body");
-      const height = card.scrollHeight + "px";
-      console.log(typeof height);
-      if (expanded) {
-        card.style.height = height;
-      } else {
-        card.style.height = "150px";
-      }
-    }, [expanded]);
+  const [expanded, setExpanded] = useState(false);
+  const expand = () => {
+    setExpanded(!expanded);
+  };
+  useEffect(() => {
+    const card = document.getElementById("card-body");
+    const height = card.scrollHeight + "px";
+    console.log(typeof height);
+    if (expanded) {
+      card.style.height = height;
+    } else {
+      card.style.height = "150px";
+    }
+  }, [expanded]);
   return (
     <Container className="rounded p-2 "  > 
         <Card className="">
@@ -44,16 +44,16 @@ function OrderCard() {
             <ProductTile />
           </Card.Body>
 
-          <Card.Footer onClick={expand} className="text-center">
-            {expanded ? (
-              <i className="fa fa-chevron-circle-up link-primary" />
-            ) : (
-              <i className="fa fa-chevron-circle-down link-primary" />
-            )}
-          </Card.Footer>
-        </Card>
-      </Container>
-  )
+        <Card.Footer onClick={expand} className="text-center">
+          {expanded ? (
+            <i className="fa fa-chevron-circle-up link-primary" />
+          ) : (
+            <i className="fa fa-chevron-circle-down link-primary" />
+          )}
+        </Card.Footer>
+      </Card>
+    </Container>
+  );
 }
 
-export default OrderCard
+export default OrderCard;
