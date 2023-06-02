@@ -39,11 +39,11 @@ export default function PhLogin() {
   });
   return (
     <React.Fragment>
-      <div class="flex justify-between">
-        <div class="w-96 h-96 m-auto relative translate-y-1/2  text-start shadow-xl p-5 rounded-md bg-secondry xl:-translate-x-10% xl:bottom-48 ">
+      <div className="flex justify-between">
+        <div className="w-96 h-96 m-auto relative translate-y-1/2  text-start shadow-xl p-5 rounded-md bg-secondry xl:-translate-x-10% xl:bottom-48 ">
           <Form onSubmit={formik.handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label class="text-SWord">Email</Form.Label>
+              <Form.Label className="text-SWord">Email</Form.Label>
               <Form.Control
                 name="email"
                 type="email"
@@ -64,7 +64,7 @@ export default function PhLogin() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label class="text-SWord">Password</Form.Label>
+              <Form.Label className="text-SWord">Password</Form.Label>
               <Form.Control
                 name="password"
                 type="password"
@@ -79,16 +79,16 @@ export default function PhLogin() {
             <div className="d-grid gap-2 mb-8">
               <button
                 type="submit"
-                class="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
+                className="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
               >
                 Login
               </button>
             </div>
-            <span class=" block text-center text-SReg">
+            <span className=" block text-center text-SReg">
               Don't have an account{" ? "}
               <span>
                 <Link
-                  class="hover:text-SReg text-gray-400  transition no-underline"
+                  className="hover:text-SReg text-gray-400  transition no-underline"
                   to={"/ph-register"}
                 >
                   Register
@@ -97,11 +97,11 @@ export default function PhLogin() {
             </span>
           </Form>
         </div>
-        <div class="h-full">
+        <div className="h-full">
           <img
             src="/images/pharmacist_1.jpg"
             alt=""
-            class="h-photo hidden xl:block "
+            className="h-photo hidden xl:block "
           />
         </div>
       </div>

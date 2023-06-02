@@ -6,60 +6,60 @@ function SideBar() {
   return (
     <Fragment>
       <div
-        class={` hidden show:block shadow-xl ${
+        className={` hidden show:block shadow-xl ${
           check ? "w-14" : "w-12%"
         }  rounded-m transition-all  `}
       >
-        <div class="text-SReg text-3xl  mt-2 border-b-2">
-          <i class="fa-solid fa-hospital ml-3 mb-2"></i>
+        <div className="text-SReg text-3xl  mt-2 border-b-2">
+          <i className="fa-solid fa-hospital ml-3 mb-2"></i>
         </div>
-        <div class="mt-2 ">
-          <ul class="p-0">
+        <div className="mt-2 ">
+          <ul className="p-0">
             <li className={`link`}>
               <NavLink className="route" to={"/ph-store"} end>
-                <i class="fa fa-home "></i>
+                <i className="fa fa-home "></i>
                 {check ? "" : "Home"}
               </NavLink>
             </li>
             <li className={`link`}>
               <NavLink className="route" to={"my-orders"} end>
-                <i class="fas fa-money-check "></i>
+                <i className="fas fa-money-check "></i>
                 {check ? "" : "My Orders"}
               </NavLink>
             </li>
             <li className={`link`}>
               <NavLink className="route" to={"interaction"} end>
-                <i class="	fas fa-compress-alt "></i>
+                <i className="	fas fa-compress-alt "></i>
                 {check ? "" :"Interction"}
               </NavLink>
             </li>
           </ul>
         </div>
-        <div class="  text-gray-500   cursor-pointer absolute bottom-0 mb-4">
+        <div className="  text-gray-500   cursor-pointer absolute bottom-0 mb-4">
           <NavLink
             className=" route  hover:text-red-500 "
             to={"/ph-login"}
             replace={true}
           >
-            <i class="fa-solid fa-right-from-bracket mr-5"></i>
+            <i className="fa-solid fa-right-from-bracket mr-5"></i>
             {check ? "" : "Logout"}
           </NavLink>
         </div>
       </div>
       <div
-        class={` h-mobileS  block  show:hidden show:invisible shadow-xl ${
+        className={` h-mobileS  block  show:hidden show:invisible shadow-xl ${
           check ? "w-14" : "w-14"
         }  rounded-m transition-all sm:h-page  `}
       >
-        <div class="text-SReg text-3xl  mt-2 border-b-2">
-          <i class="fa-solid fa-hospital ml-2 mb-2"></i>
+        <div className="text-SReg text-3xl  mt-2 border-b-2">
+          <i className="fa-solid fa-hospital ml-2 mb-2"></i>
         </div>
-        <div class="mt-2 ">
-          <ul class="p-0">
+        <div className="mt-2 ">
+          <ul className="p-0">
             <li className={`link`}>
               <NavLink className="route" to={"/ph-store"} end>
                 <span>
-                  <i class="fa fa-home "></i>
+                  <i className="fa fa-home "></i>
                 </span>
                 <span className="invisible show:visible">
                   {check ? "" : "Home"}
@@ -69,7 +69,7 @@ function SideBar() {
             <li className={`link`}>
               <NavLink className="route" to={"my-orders"} end>
                 <span>
-                  <i class="fas fa-money-check "></i>
+                  <i className="fas fa-money-check "></i>
                 </span>
                 <span className="invisible show:visible">
                   {check ? "" : "My Orders"}
@@ -79,7 +79,7 @@ function SideBar() {
             <li className={`link`}>
               <NavLink className="route" to={"interactions"} end>
                 <span>
-                  <i class="fas fa-compress-alt"></i>
+                  <i className="fas fa-compress-alt"></i>
                 </span>
                 <span className="invisible show:visible">
                   {check ? "" : "Interactions"}
@@ -88,14 +88,14 @@ function SideBar() {
             </li>
           </ul>
         </div>
-        <div class="  text-gray-500   cursor-pointer absolute -bottom-16 sm:bottom-0 sm:mb-4">
+        <div className="  text-gray-500   cursor-pointer absolute -bottom-16 sm:bottom-0 sm:mb-4">
           <NavLink
             className=" route  hover:text-red-500 "
             to={"/ph-login"}
             replace={true}
           >
             <span>
-              <i class="fa-solid fa-right-from-bracket mr-5"></i>
+              <i className="fa-solid fa-right-from-bracket mr-5"></i>
             </span>
             <span className="invisible show:visible">
               {check ? "" : "Logout"}

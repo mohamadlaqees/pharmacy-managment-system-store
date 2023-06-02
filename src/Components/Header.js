@@ -50,20 +50,20 @@ function Header({ set, check }) {
     setCheckAll(e.target.checked);
   };
   return (
-    <div class=" p-1 flex justify-center md:justify-between   bg-white rounded-md shadow-sm ">
+    <div className=" p-1 flex justify-center md:justify-between   bg-white rounded-md shadow-sm ">
       <div className="hidden show:block">
         <i
-          class="  fa fa-light fa-align-left  text-gray-500 cursor-pointer hover:text-SSReg text-xl transition-all mt-2 ml-2"
+          className="  fa fa-light fa-align-left  text-gray-500 cursor-pointer hover:text-SSReg text-xl transition-all mt-2 ml-2"
           onClick={() => set(!check)}
         ></i>
       </div>
-      <div class="ml-5 w-1/2 show:w-1/2 hidden md:block ">
+      <div className="ml-5 w-1/2 show:w-1/2 hidden md:block ">
         <InputGroup>
           <InputGroup.Text
             id="basic-addon1"
-            class="flex items-center justify-center  bg-SReg text-white p-2 rounded-md cursor-pointer hover:bg-SSReg duration-.3s"
+            className="flex items-center justify-center  bg-SReg text-white p-2 rounded-md cursor-pointer hover:bg-SSReg duration-.3s"
           >
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
           </InputGroup.Text>
           <Form.Control
             placeholder="Search"
@@ -77,26 +77,26 @@ function Header({ set, check }) {
           <div ref={popF}>
             <InputGroup.Text
               id="basic-addon1"
-              class={` flex items-center justify-center ${
+              className={` flex items-center justify-center ${
                 showF ? "bg-SSReg" : "bg-SReg"
               }  text-white p-2 h-full w-14  cursor-pointer hover:bg-SSReg duration-.3s`}
               onClick={() => {
                 setShowF(!showF);
               }}
             >
-              <i class="fa-solid fa-sitemap"></i>
+              <i className="fa-solid fa-sitemap"></i>
             </InputGroup.Text>
             <div
-              class={`w-80 h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
+              className={`w-80 h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
                 showF ? "opacity-100 visible z-10" : "opacity-0 invisible"
               } `}
             >
-              <div class="p-2  transition-all border border-b-4 border-gray-500">
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
                 <Checkbox
                   indeterminate={indeterminate}
                   onChange={onCheckAllChange}
                   checked={checkAll}
-                  class="mb-0"
+                  className="mb-0"
                 >
                   Check all
                 </Checkbox>
@@ -111,71 +111,71 @@ function Header({ set, check }) {
           </div>
         </InputGroup>
       </div>
-      <div class="flex gap-3 ">
+      <div className="flex gap-3 ">
         <div>
           <NavLink to={"purchases"} className="route">
-            <i class={`fa-solid fa-cart-shopping text-xl mt-2`}></i>
+            <i className={`fa-solid fa-cart-shopping text-xl mt-2`}></i>
           </NavLink>
         </div>
         <div>
           <NavLink to={"upload-prescription"} className="route">
             <i
-              class={`	fas fa-file-medical text-xl mt-2`}
+              className={`	fas fa-file-medical text-xl mt-2`}
               title={"order by only uploading your prescription"}
             ></i>
           </NavLink>
         </div>
-        <div class=" border-r-2 border-gray-200 " ref={popN}>
+        <div className=" border-r-2 border-gray-200 " ref={popN}>
           <i
-            class={`fa-solid fa-bell w-fit -rotate-12 text-xl ${
+            className={`fa-solid fa-bell w-fit -rotate-12 text-xl ${
               showN ? "text-SSReg" : "text-gray-500"
             } cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
             onClick={() => setShowN(!showN)}
           ></i>
           <div
-            class={`w-80 h-80 rounded-md bg-slate-100 absolute sm:top-12 top-12 right-16 sm:right-96 md:right-44 md:top-12 shadow-md transition-all overflow-auto  ${
+            className={`w-80 h-80 rounded-md bg-slate-100 absolute sm:top-12 top-12 right-16 sm:right-96 md:right-44 md:top-12 shadow-md transition-all overflow-auto  ${
               showN ? "opacity-100 visible " : "opacity-0 invisible"
             } `}
           >
-            <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
+            <div className="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
               <h5>Title</h5>
-              <span class="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
+              <span className="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
                 facilis maxime dignissimos iusto veritatis, vel modi non
                 accusantium dolor! Asperiores sapiente possimus doloremque
                 recusandae perferendis beatae unde earum, minima obcaecati?
               </span>
             </div>
-            <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
+            <div className="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
               <h5>Title</h5>
-              <span class="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
+              <span className="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
                 facilis maxime dignissimos iusto veritatis, vel modi non
                 accusantium dolor! Asperiores sapiente possimus doloremque
                 recusandae perferendis beatae unde earum, minima obcaecati?
               </span>
             </div>
-            <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
+            <div className="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
               <h5>Title</h5>
-              <span class="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
+              <span className="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
                 facilis maxime dignissimos iusto veritatis, vel modi non
                 accusantium dolor! Asperiores sapiente possimus doloremque
                 recusandae perferendis beatae unde earum, minima obcaecati?
               </span>
             </div>
-            <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
+            <div className="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
               <h5>Title</h5>
-              <span class="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
+              <span className="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
                 facilis maxime dignissimos iusto veritatis, vel modi non
                 accusantium dolor! Asperiores sapiente possimus doloremque
                 recusandae perferendis beatae unde earum, minima obcaecati?
               </span>
             </div>
-            <div class="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
+            <div className="p-2 hover:bg-slate-200 transition-all border border-b-4 border-gray-500">
               <h5>Title</h5>
-              <span class="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
+              <span className="block h-11 overflow-hidden cursor-pointer text-ellipsis ">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
                 facilis maxime dignissimos iusto veritatis, vel modi non
                 accusantium dolor! Asperiores sapiente possimus doloremque
@@ -184,29 +184,29 @@ function Header({ set, check }) {
             </div>
           </div>
         </div>
-        <div class=" transition-all  " ref={prof}>
+        <div className=" transition-all  " ref={prof}>
           <div
             className="flex gap-3 cursor-pointer"
             onClick={() => setShowP(!showP)}
           >
             <div>
               <i
-                class={`fa-solid fa-user text-xl ${"text-SSReg"} cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
+                className={`fa-solid fa-user text-xl ${"text-SSReg"} cursor-pointer transition-all hover:text-SSReg mt-2 mr-2 `}
               ></i>
             </div>
-            <div class=" ">
-              <span class="block text-sm">Mohammad Laqees</span>
-              <span class="text-gray-500 block text-sm">Admin</span>
+            <div className=" ">
+              <span className="block text-sm">Mohammad Laqees</span>
+              <span className="text-gray-500 block text-sm">Admin</span>
             </div>
           </div>
           <div
-            class={`w-48 h-80 rounded-md bg-slate-100 absolute top-12 right-8 sm:top-12 sm:right-44  md:right-0 md:top-12 shadow-md transition duration-.3s overflow-auto ${
+            className={`w-48 h-80 rounded-md bg-slate-100 absolute top-12 right-8 sm:top-12 sm:right-44  md:right-0 md:top-12 shadow-md transition duration-.3s overflow-auto ${
               showP ? "opacity-100 visible" : "opacity-0 invisible"
             } `}
           >
-            <div class="p-2 flex gap-3 justify-center  hover:bg-slate-200  border border-b-4 border-gray-500 hover:text-SSReg transition-all">
+            <div className="p-2 flex gap-3 justify-center  hover:bg-slate-200  border border-b-4 border-gray-500 hover:text-SSReg transition-all">
               <div>
-                <i class="fa-regular fa-user"></i>{" "}
+                <i className="fa-regular fa-user"></i>{" "}
               </div>
               <div>
                 <Link
@@ -217,9 +217,9 @@ function Header({ set, check }) {
                 </Link>
               </div>
             </div>
-            <div class="p-2 flex gap-3 justify-center  hover:bg-slate-200  border border-b-4 border-gray-500 hover:text-SSReg transition-all">
+            <div className="p-2 flex gap-3 justify-center  hover:bg-slate-200  border border-b-4 border-gray-500 hover:text-SSReg transition-all">
               <div>
-                <i class="fa-regular fa-pen-to-square"></i>{" "}
+                <i className="fa-regular fa-pen-to-square"></i>{" "}
               </div>
               <div>
                 <Link

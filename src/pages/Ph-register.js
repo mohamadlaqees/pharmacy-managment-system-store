@@ -46,15 +46,15 @@ export default function Register() {
   });
   return (
     <React.Fragment>
-      <div class=" xl:flex xl:justify-between">
-        <div class="w-96 mt-20 ml-auto mr-auto   xl:w-form h-fit relative xl:m-auto shadow-xl p-5 rounded-md bg-secondry  ">
+      <div className=" xl:flex xl:justify-between">
+        <div className="w-96 mt-20 ml-auto mr-auto   xl:w-form h-fit relative xl:m-auto shadow-xl p-5 rounded-md bg-secondry  ">
           <Form onSubmit={formik.handleSubmit}>
-            <div class="xl:flex xl:gap-3">
+            <div className="xl:flex xl:gap-3">
               <Form.Group
                 className="mb-3 xl:col-md-6 "
                 controlId="formBasicName"
               >
-                <Form.Label class="text-SWord">First name</Form.Label>
+                <Form.Label className="text-SWord">First name</Form.Label>
                 <Form.Control
                   name="Fname"
                   type="text"
@@ -75,7 +75,7 @@ export default function Register() {
                 className="mb-3 xl:col-md-6 "
                 controlId="formBasicLastName"
               >
-                <Form.Label class="text-SWord">Last name</Form.Label>
+                <Form.Label className="text-SWord">Last name</Form.Label>
                 <Form.Control
                   name="Lname"
                   type="text"
@@ -93,12 +93,12 @@ export default function Register() {
               </Form.Group>
             </div>
 
-            <div class="xl:flex xl:gap-3">
+            <div className="xl:flex xl:gap-3">
               <Form.Group
                 className="mb-3 xl:col-md-6"
                 controlId="formBasicEmail"
               >
-                <Form.Label class="text-SWord">Email</Form.Label>
+                <Form.Label className="text-SWord">Email</Form.Label>
                 <Form.Control
                   name="email"
                   type="email"
@@ -120,7 +120,7 @@ export default function Register() {
                 className="mb-3 xl:col-md-6"
                 controlId="formBasicPassword"
               >
-                <Form.Label class="text-SWord">Password</Form.Label>
+                <Form.Label className="text-SWord">Password</Form.Label>
                 <Form.Control
                   name="password"
                   type="password"
@@ -137,7 +137,7 @@ export default function Register() {
             </div>
 
             <Form.Group className="mb-3" controlId="formBasicPhone">
-              <Form.Label class="text-SWord">Phone</Form.Label>
+              <Form.Label className="text-SWord">Phone</Form.Label>
               <Form.Control
                 name="phone"
                 type="phone"
@@ -151,7 +151,7 @@ export default function Register() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicAddress">
-              <Form.Label class="text-SWord">Address</Form.Label>
+              <Form.Label className="text-SWord">Address</Form.Label>
               <Form.Control
                 name="address"
                 type="address"
@@ -167,16 +167,16 @@ export default function Register() {
             <div className="d-grid gap-2 mb-8">
               <button
                 type="submit"
-                class="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
+                className="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
               >
                 Register
               </button>
             </div>
-            <span class=" block text-center text-SReg">
+            <span className=" block text-center text-SReg">
               Already have an account{" ? "}
               <span>
                 <Link
-                  class="hover:hover:text-SReg text-gray-400  transition no-underline"
+                  className="hover:hover:text-SReg text-gray-400  transition no-underline"
                   to={"/ph-login"}
                 >
                   Login
@@ -185,11 +185,11 @@ export default function Register() {
             </span>
           </Form>
         </div>
-        <div class="h-full w-photo">
+        <div className="h-full w-photo">
           <img
             src="/images/pharmacist_1.jpg"
             alt=""
-            class="h-photo hidden xl:block "
+            className="h-photo hidden xl:block "
           />
         </div>
       </div>

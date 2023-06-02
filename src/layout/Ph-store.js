@@ -8,13 +8,13 @@ function Dashboard() {
   const [check, setCheck] = useState(false);
   return (
     <Fragment>
-      <div class="flex ">
+      <div className="flex ">
         <CheckProvider value={check}>
           <SideBar />
         </CheckProvider>
-        <div class={`w-full ${check ? "show:w-full" : "show:w-88%"}`}>
+        <div className={`w-full ${check ? "show:w-full" : "show:w-88%"}`}>
           <div
-            class={`fixed w-custom2 ${
+            className={`fixed w-custom2 ${
               check ? "show:w-custom" : "show:w-88%"
             } z-20 `}
           >
