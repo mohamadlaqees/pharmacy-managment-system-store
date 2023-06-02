@@ -611,7 +611,7 @@ function PhContent() {
               <li
                 key={i}
                 className={` ${
-                  currentPage === e ? "border-2 border-black" : ""
+                  currentPage === e ? " border-SReg border-2 " : ""
                 }cursor-pointer hover:bg-slate-200 rounded-md transition-all pt-2 pb-2 pl-4 pr-4`}
                 onClick={() => pagiHandler(e)}
               >
