@@ -5547,6 +5547,7 @@ function PhContent() {
             onChange={(pN, pS) => {
               setCurrentPage(pN);
             }}
+            showSizeChanger={false}
           />
         </ul>
       </div>
