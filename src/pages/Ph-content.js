@@ -604,7 +604,7 @@ function PhContent() {
             className="cursor-pointer hover:bg-slate-200 rounded-md transition-all pt-2 pb-2 pl-4 pr-4"
             onClick={() => preHandler()}
           >
-            <a className={`no-underline  text-black`}>Prev</a>
+            <span className={`no-underline  text-black`}>Prev</span>
           </li>
           {num.map((e, i) => {
             return (
@@ -615,13 +615,13 @@ function PhContent() {
                 }cursor-pointer hover:bg-slate-200 rounded-md transition-all pt-2 pb-2 pl-4 pr-4`}
                 onClick={() => pagiHandler(e)}
               >
-                <a
+                <span
                   className={`no-underline  ${
                     currentPage === e ? "text-SReg " : "text-black"
                   } hover:text-SReg`}
                 >
                   {e}
-                </a>
+                </span>
               </li>
             );
           })}
@@ -629,7 +629,7 @@ function PhContent() {
             className="cursor-pointer hover:bg-slate-200 rounded-md transition-all pt-2 pb-2 pl-4 pr-4"
             onClick={() => nextHandler()}
           >
-            <a className={`no-underline  text-black`}>Next</a>
+            <span className={`no-underline  text-black`}>Next</span>
           </li>
         </ul>
       </div>

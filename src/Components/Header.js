@@ -61,7 +61,7 @@ function Header({ set, check }) {
         <InputGroup>
           <InputGroup.Text
             id="basic-addon1"
-            className="flex items-center justify-center  bg-SReg text-white p-2 rounded-md cursor-pointer hover:bg-SSReg duration-.3s"
+            class="flex items-center justify-center  bg-SReg text-white p-2 rounded-md cursor-pointer hover:bg-SSReg duration-.3s"
           >
             <i className="fas fa-search"></i>
           </InputGroup.Text>
@@ -77,7 +77,7 @@ function Header({ set, check }) {
           <div ref={popF}>
             <InputGroup.Text
               id="basic-addon1"
-              className={` flex items-center justify-center ${
+              class={` flex items-center justify-center ${
                 showF ? "bg-SSReg" : "bg-SReg"
               }  text-white p-2 h-full w-14  cursor-pointer hover:bg-SSReg duration-.3s`}
               onClick={() => {
