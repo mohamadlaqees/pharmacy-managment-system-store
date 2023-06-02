@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function PhContent() {
-  const navigate = useNavigate();
   let map = [
     {
       name: "bla",
@@ -11,6 +10,424 @@ function PhContent() {
       img: "/images/med.jpg",
       brand: "brand",
     },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+    {
+      name: "bla",
+      price: "bla",
+      img: "/images/med.jpg",
+      brand: "brand",
+    },
+
     {
       name: "bla",
       price: "bla",
@@ -132,13 +549,36 @@ function PhContent() {
       brand: "brand",
     },
   ];
+  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const dataInPage = 20;
+  const lastIndex = currentPage * dataInPage;
+  const firstIndex = lastIndex - dataInPage;
+  const data = map.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(map.length / dataInPage);
+  const num = [...Array(npage + 1).keys()].slice(1);
+  const preHandler = () => {
+    if (currentPage !== firstIndex) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const nextHandler = () => {
+    if (currentPage !== lastIndex) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+  const pagiHandler = (e) => {
+    setCurrentPage(e);
+  };
+
   return (
     <div className="page">
       <div className="grid grid-cols-4 grid-rows-2   ">
-        {map.map((e, inx) => (
+        {data.map((e, inx) => (
           <Link
             to={`product/${inx}`}
             className="w-72 h-form rounded-md shadow-md hover:bg-slate-100 p-3 mb-3 cursor-pointer transition-all no-underline "
+            key={inx}
           >
             <div className="rounded-md p-2 w-full bg-white m-auto bg-cover ">
               <img src={`${e.img}`} alt="" />
@@ -157,6 +597,41 @@ function PhContent() {
             </div>
           </Link>
         ))}
+      </div>
+      <div className="mt-3 p-2   ">
+        <ul className="flex justify-center gap-3 ">
+          <li
+            className="cursor-pointer hover:bg-slate-200 rounded-md transition-all pt-2 pb-2 pl-4 pr-4"
+            onClick={() => preHandler()}
+          >
+            <a className={`no-underline  text-black`}>Prev</a>
+          </li>
+          {num.map((e, i) => {
+            return (
+              <li
+                key={i}
+                className={` ${
+                  currentPage === e ? "border-2 border-black" : ""
+                }cursor-pointer hover:bg-slate-200 rounded-md transition-all pt-2 pb-2 pl-4 pr-4`}
+                onClick={() => pagiHandler(e)}
+              >
+                <a
+                  className={`no-underline  ${
+                    currentPage === e ? "text-SReg " : "text-black"
+                  } hover:text-SReg`}
+                >
+                  {e}
+                </a>
+              </li>
+            );
+          })}
+          <li
+            className="cursor-pointer hover:bg-slate-200 rounded-md transition-all pt-2 pb-2 pl-4 pr-4"
+            onClick={() => nextHandler()}
+          >
+            <a className={`no-underline  text-black`}>Next</a>
+          </li>
+        </ul>
       </div>
     </div>
   );
