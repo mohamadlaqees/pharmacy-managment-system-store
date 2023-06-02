@@ -67,7 +67,7 @@ function SideBar() {
               </NavLink>
             </li>
             <li className={`link`}>
-              <NavLink className="route" to={"my-orders"} end>
+              <NavLink className="route" to={"my-orders"} >
                 <span>
                   <i className="fas fa-money-check "></i>
                 </span>
@@ -77,7 +77,7 @@ function SideBar() {
               </NavLink>
             </li>
             <li className={`link`}>
-              <NavLink className="route" to={"interactions"} end>
+              <NavLink className="route" to={"interaction"} >
                 <span>
                   <i className="fas fa-compress-alt"></i>
                 </span>
