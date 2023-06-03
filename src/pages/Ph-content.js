@@ -5513,7 +5513,7 @@ function PhContent() {
   const data = map.slice(firstIndex, lastIndex);
   return (
     <div className="page">
-      <div className="grid grid-cols-4 grid-rows-2   ">
+      <div className=" grid grid-cols-fluid grid-rows-fluid    ">
         {data.map((e, inx) => (
           <Link
             to={`product/${inx}`}

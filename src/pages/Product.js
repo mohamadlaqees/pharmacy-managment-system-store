@@ -9,12 +9,12 @@ function Product() {
   };
   return (
     <div className="page2">
-      <div className="flex gap-5 justify-center items-center max-h-mCont">
-        <div className=" w-form h-form rounded-md p-4 ">
+      <div className="flex flex-wrap gap-5 justify-center items-center max-h-mCont">
+        <div className=" w-64 h-64 sm:w-form sm:h-form rounded-md p-4 ">
           <img src="/images/med.jpg" alt="" />
         </div>
         <div>
-          <div className="p-4  w-form max-h-mInfo">
+          <div className="p-4 w-details   sm:w-form sm:max-h-mInfo">
             <span className=" block text-sm text-font2">Brand</span>
             <span className=" text-font2">
               <span className="text-3xl">Title</span>

@@ -16,7 +16,6 @@ html body {
 .link {
   @apply pt-4 pb-3  relative cursor-pointer rounded-md;
   height: 76px;
-
 }
 .link .route i {
   @apply mr-5;
@@ -51,7 +50,11 @@ html body {
   margin-top: 48px;
   overflow: auto;
 }
-
+@media (min-width: 500px) {
+  .page2 {
+    height: calc(100vh - 50px);
+  }
+}
 .menu {
   width: 500px;
   padding: 10px;
@@ -61,10 +64,16 @@ html body {
   transition: 0.3s;
   cursor: pointer;
 }
+@media (max-width: 640px) {
+  .menu {
+    width: 350px;
+  }
+}
 .menu:hover {
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
   color: #52b0ed;
 }
+
 .drop {
   width: 500px;
   position: relative;
@@ -76,6 +85,17 @@ html body {
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
   top: -45px;
   height: 0;
+}
+@media (max-width: 640px) {
+  .drop {
+    width: 350px;
+  }
+}
+@media (max-width: 640px) {
+  .drop.drop.active {
+    width: 350px;
+    margin-bottom: 3px;
+  }
 }
 .drop.active {
   position: relative;
