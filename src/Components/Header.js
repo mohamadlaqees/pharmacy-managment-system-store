@@ -200,7 +200,7 @@ function Header({ set, check }) {
             </div>
           </div>
           <div
-            className={`w-48 h-80 rounded-md bg-slate-100 absolute top-12 right-8 sm:top-12 sm:right-44  md:right-0 md:top-12 shadow-md transition duration-.3s overflow-auto ${
+            className={`w-48 h-80 rounded-md bg-slate-100 absolute top-12 right-8 sm:top-12 sm:right-48  md:right-0 md:top-12 shadow-md transition duration-.3s overflow-auto ${
               showP ? "opacity-100 visible" : "opacity-0 invisible"
             } `}
           >
@@ -227,6 +227,20 @@ function Header({ set, check }) {
                   to={"editProfile"}
                 >
                   Edit profile
+                </Link>
+              </div>
+            </div>
+
+            <div className="  show:hidden show:invisible  p-2  flex gap-3 justify-center   hover:text-red-500 border border-b-4 border-gray-500 hover:text-SSReg transition-all">
+              <div>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>{" "}
+              </div>
+              <div>
+                <Link
+                  className="no-underline text-gray-500 hover:text-gray-500"
+                  to={"/ph-login"}
+                >
+                  Logout
                 </Link>
               </div>
             </div>

@@ -8,7 +8,7 @@ function Product() {
     console.log("changed", value);
   };
   return (
-    <div className="page">
+    <div className="page2">
       <div className="flex gap-5 justify-center items-center max-h-mCont">
         <div className=" w-form h-form rounded-md p-4 ">
           <img src="/images/med.jpg" alt="" />

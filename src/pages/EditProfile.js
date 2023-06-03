@@ -51,7 +51,7 @@ function EditProfile() {
   });
 
   return (
-    <div className="page">
+    <div className="page2">
       <Form onSubmit={formik.handleSubmit}>
         <div className="md:flex md:justify-center md:gap-4">
           <div className="rounded-md bg-white sm:w-80 shadow-md p-4 w-64 md:h-form  ml-auto  mr-auto  md:w-64 mb-4  md:mt-24 md:ml-0 md:mr-0 md:mb-0 ">

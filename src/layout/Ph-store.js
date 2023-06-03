@@ -8,7 +8,7 @@ function Dashboard() {
   const [check, setCheck] = useState(false);
   return (
     <Fragment>
-      <div className="flex ">
+      <div className="flex">
         <CheckProvider value={check}>
           <SideBar />
         </CheckProvider>

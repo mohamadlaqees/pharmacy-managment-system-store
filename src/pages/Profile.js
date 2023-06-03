@@ -2,7 +2,7 @@ import React from "react";
 
 function Profile() {
   return (
-    <div className="page">
+    <div className="page2">
       <div className="md:flex md:justify-center md:gap-4">
         <div className=" ml-auto  mr-auto mb-2 w-64 sm:w-80 rounded-md bg-white shadow-md p-4 md:w-64 h-96  md:mt-24 md:ml-0 md:mr-0 md-mb-0 ">
           <div className="p-3">

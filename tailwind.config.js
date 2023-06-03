@@ -16,8 +16,6 @@ module.exports = {
         page: "100vh",
         form: "420px",
         small: "544px",
-        mobileC: "969px",
-        mobileS: "1011px",
       },
       translate: {
         "10%": "10%",
@@ -34,8 +32,6 @@ module.exports = {
         ".3s": ".3s",
       },
       screens: {
-        MTphone: "400px",
-        side: "1073px",
         show: "1200px",
       },
       maxHeight: {

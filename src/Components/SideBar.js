@@ -30,26 +30,26 @@ function SideBar() {
             <li className={`link`}>
               <NavLink className="route" to={"interaction"} end>
                 <i className="	fas fa-compress-alt "></i>
-                {check ? "" :"Interction"}
+                {check ? "" : "Interction"}
               </NavLink>
             </li>
+            <span className="  text-gray-500   cursor-pointer absolute bottom-0  pt-4 pb-3 rounded-md">
+              <NavLink
+                className=" route  hover:text-red-500 "
+                to={"/ph-login"}
+                replace={true}
+              >
+                <i className="fa-solid fa-right-from-bracket mr-5"></i>
+                {check ? "" : "Logout"}
+              </NavLink>
+            </span>
           </ul>
-        </div>
-        <div className="  text-gray-500   cursor-pointer absolute bottom-0 mb-4">
-          <NavLink
-            className=" route  hover:text-red-500 "
-            to={"/ph-login"}
-            replace={true}
-          >
-            <i className="fa-solid fa-right-from-bracket mr-5"></i>
-            {check ? "" : "Logout"}
-          </NavLink>
         </div>
       </div>
       <div
-        className={` h-mobileS  block  show:hidden show:invisible shadow-xl ${
+        className={` block  show:hidden show:invisible shadow-xl ${
           check ? "w-14" : "w-14"
-        }  rounded-m transition-all sm:h-page  `}
+        }  rounded-m transition-all    `}
       >
         <div className="text-SReg text-3xl  mt-2 border-b-2">
           <i className="fa-solid fa-hospital ml-2 mb-2"></i>
@@ -67,7 +67,7 @@ function SideBar() {
               </NavLink>
             </li>
             <li className={`link`}>
-              <NavLink className="route" to={"my-orders"} >
+              <NavLink className="route" to={"my-orders"}>
                 <span>
                   <i className="fas fa-money-check "></i>
                 </span>
@@ -77,7 +77,7 @@ function SideBar() {
               </NavLink>
             </li>
             <li className={`link`}>
-              <NavLink className="route" to={"interaction"} >
+              <NavLink className="route" to={"interaction"}>
                 <span>
                   <i className="fas fa-compress-alt"></i>
                 </span>
@@ -87,20 +87,6 @@ function SideBar() {
               </NavLink>
             </li>
           </ul>
-        </div>
-        <div className="  text-gray-500   cursor-pointer absolute -bottom-16 sm:bottom-0 sm:mb-4">
-          <NavLink
-            className=" route  hover:text-red-500 "
-            to={"/ph-login"}
-            replace={true}
-          >
-            <span>
-              <i className="fa-solid fa-right-from-bracket mr-5"></i>
-            </span>
-            <span className="invisible show:visible">
-              {check ? "" : "Logout"}
-            </span>
-          </NavLink>
         </div>
       </div>
     </Fragment>
