@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Checkbox, Divider } from "antd";
-import { useNavigate } from "react-router-dom";
 import { NavLink, Link } from "react-router-dom";
 import { Col, InputNumber, Row, Slider, Space } from "antd";
 import { useCallback } from "react";

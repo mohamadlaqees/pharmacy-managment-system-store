@@ -1,19 +1,17 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Pagination } from "antd";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { Checkbox, Divider } from "antd";
+import { Checkbox } from "antd";
+import { Col, InputNumber, Row, Slider, Space } from "antd";
 
 function PhContent() {
   const CheckboxGroup = Checkbox.Group;
-  const plainOptions = ["Apple", "Pear", "Orange"];
   const defaultCheckedList = [];
   const [showF, setShowF] = useState(false);
   const popF = useRef();
-  const popN = useRef();
-  const prof = useRef();
   useEffect(() => {
     let popHandler = (e) => {
       if (!popF.current.contains(e.target)) {
@@ -28,19 +26,21 @@ function PhContent() {
   const onSearch = (value) => console.log(value);
 
   const [checkedList, setCheckedList] = useState(defaultCheckedList);
-  const [indeterminate, setIndeterminate] = useState(true);
-  const [checkAll, setCheckAll] = useState(false);
-  const onChange = (list) => {
+  const [checkB, setCheckB] = useState(false);
+  const [checkW, setCheckW] = useState(false);
+  const [inputValue, setInputValue] = useState(1);
+  const onChange = useCallback((list) => {
     setCheckedList(list);
-    console.log(checkedList);
-    setIndeterminate(!!list.length && list.length < plainOptions.length);
-    setCheckAll(list.length === plainOptions.length);
+  }, []);
+  const onChangeB = useCallback(() => {
+    setCheckB(!checkB);
+  }, [checkB]);
+  const onChangeW = () => {
+    setCheckW(!checkW);
   };
-  const onCheckAllChange = (e) => {
-    console.log(e.target.checked);
-    setCheckedList(e.target.checked ? plainOptions : []);
-    setIndeterminate(false);
-    setCheckAll(e.target.checked);
+  const onChangeI = (newValue) => {
+    console.log(newValue);
+    setInputValue(newValue);
   };
   let map = [
     {
@@ -5581,22 +5581,55 @@ function PhContent() {
               <i className="fa-solid fa-sitemap"></i>
             </InputGroup.Text>
             <div
-              className={`w-check  sm:w-80 h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
+              className={`w-check h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
                 showF ? "opacity-100 visible z-10" : "opacity-0 invisible"
               } `}
             >
               <div className="p-2  transition-all border border-b-4 border-gray-500">
-                <Checkbox
-                  indeterminate={indeterminate}
-                  onChange={onCheckAllChange}
-                  checked={checkAll}
-                  className="mb-0"
-                >
-                  Check all
+                <Checkbox onChange={onChangeB} checked={checkB}>
+                  Brand
                 </Checkbox>
-                <Divider />
+              </div>
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
+                <div className="text-sm">Price</div>
+                <Space
+                  style={{
+                    width: "100%",
+                  }}
+                  direction="vertical"
+                >
+                  <Row>
+                    <Col span={12}>
+                      <Slider
+                        min={10}
+                        max={1000}
+                        onChange={onChangeI}
+                        value={typeof inputValue === "number" ? inputValue : 0}
+                      />
+                    </Col>
+                    <Col span={4}>
+                      <InputNumber
+                        min={10}
+                        max={1000}
+                        style={{
+                          margin: "0 16px",
+                        }}
+                        value={inputValue}
+                        onChange={onChangeI}
+                      />
+                    </Col>
+                  </Row>
+                </Space>
+              </div>
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
+                <Checkbox onChange={onChangeW} checked={checkW}>
+                  without prescription
+                </Checkbox>
+              </div>
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
+                <div className="text-sm">Type</div>
                 <CheckboxGroup
-                  options={plainOptions}
+                  options={["Needle", "Capsule", "syrups"]}
                   value={checkedList}
                   onChange={onChange}
                 />
