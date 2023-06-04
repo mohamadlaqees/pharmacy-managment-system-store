@@ -1,50 +1,50 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import ProductTile from "./ProductTile";
-import { useState } from "react";
-import { useEffect } from "react";
 
 function OrderCard() {
   const [expanded, setExpanded] = useState(false);
-  const expand = () => {
-    setExpanded(!expanded);
-  };
+  const bodyRef = useRef(null);
+
   useEffect(() => {
-    const card = document.getElementById("card-body");
-    const height = card.scrollHeight + "px";
-    console.log(typeof height);
+    const cardBody = bodyRef.current;
+    const height = cardBody.scrollHeight + "px";
     if (expanded) {
-      card.style.height = height;
+      cardBody.style.height = height;
     } else {
-      card.style.height = "150px";
+      cardBody.style.height = "150px";
     }
   }, [expanded]);
-  return (
-    <Container className="rounded p-2 "  > 
-        <Card className="">
-          <Card.Header className="text-center">
-            <Row>
-              <Col md={5}>Datete</Col>
-              <Col>cost</Col>
-              <Col>status</Col>
-              <Col md={1}>delet</Col>
-            </Row>
-          </Card.Header>
-          <Card.Body
-            style={{
-              height: "150px",
-              transition: "height 0.4s cubic-bezier(0, 1.33, 0.09, 0.99) 0s ",
-              overflow: "hidden",
-            }}
-            id="card-body"
-          >
-            <ProductTile />
-            <ProductTile />
-            <ProductTile />
-            <ProductTile />
-          </Card.Body>
 
-        <Card.Footer onClick={expand} className="text-center">
+  const handleExpand = () => {
+    setExpanded(!expanded);
+  };
+
+  return (
+    <Container className="rounded p-2 ">
+      <Card className="">
+        <Card.Header className="text-center">
+          <Row>
+            <Col md={5}>Datete</Col>
+            <Col>cost</Col>
+            <Col>status</Col>
+            <Col md={1}>delet</Col>
+          </Row>
+        </Card.Header>
+        <Card.Body
+          ref={bodyRef}
+          style={{
+            height: "150px",
+            transition: "height 0.4s cubic-bezier(0, 1.33, 0.09, 0.99) 0s ",
+            overflow: "hidden",
+          }}
+        >
+          <ProductTile />
+          <ProductTile />
+          <ProductTile />
+          <ProductTile />
+        </Card.Body>
+        <Card.Footer onClick={handleExpand} className="text-center">
           {expanded ? (
             <i className="fa fa-chevron-circle-up link-primary" />
           ) : (
