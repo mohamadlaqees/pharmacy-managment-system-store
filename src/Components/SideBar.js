@@ -33,6 +33,12 @@ function SideBar() {
                 {check ? "" : "Interaction"}
               </NavLink>
             </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"Jobs"} end>
+                <i className="fa fa-briefcase "></i>
+                {check ? "" : "Jobs"}
+              </NavLink>
+            </li>
             <span className="  text-gray-500   cursor-pointer absolute bottom-0  pt-4 pb-3 rounded-md">
               <NavLink
                 className=" route  hover:text-red-500 "

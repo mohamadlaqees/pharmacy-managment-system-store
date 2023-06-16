@@ -18,6 +18,8 @@ import MyOrders from "./pages/MyOrders";
 import Product from "./pages/Product";
 // =======
 import Interactions from "./pages/Interactions";
+import Jobs from "./pages/Jobs";
+import JobDetails from "./pages/JobDetails";
 // >>>>>>> 56af85f482a414774db21a2b40720669057f8ee3
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
@@ -46,6 +48,8 @@ const routes = createBrowserRouter([
       { path: "interaction", element: <Interactions /> },
       { path: "editProfile", element: <EditProfile /> },
       { path: "product/:id", element: <Product /> },
+      { path: "jobs", element: <Jobs /> },
+      { path: "jobs/jobDetails", element: <JobDetails /> },
     ],
   },
 ]);
