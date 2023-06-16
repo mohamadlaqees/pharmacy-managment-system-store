@@ -5,8 +5,11 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Checkbox } from "antd";
 import { useNavigate } from "react-router-dom";
+import { Modal, Upload } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+
 function JobDetails() {
-  const [file, setFile] = useState();
+  const [file, setFile] = useState([]);
   const navigate = useNavigate();
   const downloadFile = (fileName = "CV-PDF-file.pdf") => {
     // fetch("https://cors-anywhere.herokuapp.com/" + filePath, {
@@ -74,13 +77,44 @@ function JobDetails() {
   const onChange = (checkedValues) => {
     console.log("checked = ", checkedValues);
   };
+
+  const [image, setImage] = useState({ preview: "", raw: "" });
+
+  const handleChange = (e) => {
+    if (e.target.files.length) {
+      setImage({
+        preview: URL.createObjectURL(e.target.files[0]),
+        raw: e.target.files[0],
+      });
+    }
+  };
+
   return (
     <div className="page">
       <div className="bg-white rounded-md p-4 shadow-lg  ">
         <div className="flex gap-4">
           <div className="rounded-md bg-white shadow-md  w-64 h-form    ">
-            <div className="p-3">
-              <img src="/images/user.jpg" alt="" className="rounded-full" />
+            <div className=" text-center ">
+              <label htmlFor="upload-button">
+                {image.preview ? (
+                  <img
+                    src={image.preview}
+                    alt="dummy"
+                    className="rounded-full w-64 h-64"
+                  />
+                ) : (
+                  <>
+                    <span className="fa-stack fa-2x mt-3 mb-2">
+                      <i className="fas fa-circle fa-stack-2x" />
+                      <i className="fas fa-store fa-stack-1x fa-inverse" />
+                    </span>
+                    <h5 className="text-center">Upload your photo</h5>
+                  </>
+                )}
+              </label>
+              <div className="hidden">
+                <input type="file" id="upload-button" onChange={handleChange} />{" "}
+              </div>
             </div>
             <span className="p-2 block text-center text-font2">Jop title:</span>
             <span className="p-2 block text-center text-SReg text-lg">
