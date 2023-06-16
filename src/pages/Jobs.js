@@ -5,7 +5,7 @@ function Jobs() {
   const navigate = useNavigate();
   const map = [
     {
-      job: "Employee",
+      job: "Pharmacy Employee",
     },
   ];
   return (

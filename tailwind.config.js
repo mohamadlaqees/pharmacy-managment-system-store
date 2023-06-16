@@ -28,6 +28,7 @@ module.exports = {
         form: "500px",
         photo: "860px",
         details: "400px",
+        job:'410px',
         check: "310px",
       },
       transitionDuration: {
