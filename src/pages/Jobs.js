@@ -33,7 +33,7 @@ function Jobs() {
               </div>
               <div className="flex gap-3 items-center">
                 <Link
-                  to={`jobDetails`}
+                  to={``}
                   className="text-gray-500 hover:text-gray-600 text-xl transition-all"
                 >
                   <i className="fa-solid fa-arrow-right"></i>
