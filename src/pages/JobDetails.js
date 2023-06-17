@@ -9,7 +9,7 @@ import { Modal, Upload } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 function JobDetails() {
-  const [file, setFile] = useState([]);
+  const [file, setFile] = useState();
   const navigate = useNavigate();
   const downloadFile = (fileName = "CV-PDF-file.pdf") => {
     // fetch("https://cors-anywhere.herokuapp.com/" + filePath, {
@@ -89,6 +89,10 @@ function JobDetails() {
     }
   };
 
+  const handleFile = (e) => {
+    setFile(e.target.files[0]);
+    console.log(file);
+  };
   return (
     <div className="page">
       <div className="bg-white rounded-md p-4 shadow-lg  ">
@@ -104,9 +108,9 @@ function JobDetails() {
                   />
                 ) : (
                   <>
-                    <span className="fa-stack fa-2x mt-3 mb-2">
-                      <i className="fas fa-circle fa-stack-2x" />
-                      <i className="fas fa-store fa-stack-1x fa-inverse" />
+                    <span className="fa-stack fa-2x mt-3 mb-2 ">
+                      <i className="fas fa-circle fa-stack-2x text-SReg" />
+                      <i className="fa fa-camera fa-stack-1x fa-inverse " />
                     </span>
                     <h5 className="text-center">Upload your photo</h5>
                   </>
@@ -248,6 +252,25 @@ function JobDetails() {
                     marginTop: "10px",
                   }}
                 />
+              </div>
+              <div className=" text-center mt-4 ">
+                <div>
+                  <label
+                    htmlFor="file"
+                    className="  w-64 cursor-pointer p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s  text-center"
+                  >
+                    Upload your cv{" "}
+                  </label>
+                  <input
+                    type="file"
+                    id="file"
+                    onChange={handleFile}
+                    className="hidden"
+                  />
+                </div>
+                <div className="mt-1">
+                  {file && `${file.name} - ${file.type}`}
+                </div>
               </div>
             </div>
           </div>
