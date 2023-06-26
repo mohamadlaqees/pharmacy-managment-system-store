@@ -22,8 +22,8 @@ function OrderCard() {
 
   return (
     <Container className="rounded p-2 ">
-      <Card className="">
-        <Card.Header className="text-center">
+      <Card className="border-primary bg-light">
+        <Card.Header className="text-center bg-light border-info">
           <Row>
             <Col md={5}>Datete</Col>
             <Col>cost</Col>
@@ -35,7 +35,7 @@ function OrderCard() {
           ref={bodyRef}
           style={{
             height: "150px",
-            transition: "height 0.4s cubic-bezier(0, 1.33, 0.09, 0.99) 0s ",
+            transition: "height .5s cubic-bezier(0, 1.33, 0.09, 0.99) 0s ",
             overflow: "hidden",
           }}
         >
@@ -44,7 +44,7 @@ function OrderCard() {
           <ProductTile />
           <ProductTile />
         </Card.Body>
-        <Card.Footer onClick={handleExpand} className="text-center">
+        <Card.Footer onClick={handleExpand} className="text-center shadow-sm bg-light ">
           {expanded ? (
             <i className="fa fa-chevron-circle-up link-primary" />
           ) : (

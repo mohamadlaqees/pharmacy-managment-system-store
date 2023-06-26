@@ -23,7 +23,7 @@ function SideBar() {
             </li>
             <li className={`link`}>
               <NavLink className="route" to={"my-orders"} end>
-                <i className="fas fa-money-check "></i>
+                <i className="	fas fa-receipt "></i>
                 {check ? "" : "My Orders"}
               </NavLink>
             </li>
@@ -75,7 +75,7 @@ function SideBar() {
             <li className={`link`}>
               <NavLink className="route" to={"my-orders"}>
                 <span>
-                  <i className="fas fa-money-check "></i>
+                  <i className="	fas fa-receipt "></i>
                 </span>
                 <span className="invisible show:visible">
                   {check ? "" : "My Orders"}
