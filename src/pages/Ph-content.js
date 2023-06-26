@@ -1,8 +1,47 @@
 import React from "react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { Pagination } from "antd";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import { Checkbox } from "antd";
+import { Col, InputNumber, Row, Slider, Space } from "antd";
+
 function PhContent() {
+  const CheckboxGroup = Checkbox.Group;
+  const defaultCheckedList = [];
+  const [showF, setShowF] = useState(false);
+  const popF = useRef();
+  useEffect(() => {
+    let popHandler = (e) => {
+      if (!popF.current.contains(e.target)) {
+        setShowF(false);
+      }
+    };
+    document.addEventListener("mousedown", popHandler);
+    return () => {
+      document.removeEventListener("mousedown", popHandler);
+    };
+  });
+  const onSearch = (value) => console.log(value);
+
+  const [checkedList, setCheckedList] = useState(defaultCheckedList);
+  const [checkB, setCheckB] = useState(false);
+  const [checkW, setCheckW] = useState(false);
+  const [inputValue, setInputValue] = useState(1);
+  const onChange = useCallback((list) => {
+    setCheckedList(list);
+  }, []);
+  const onChangeB = useCallback(() => {
+    setCheckB(!checkB);
+  }, [checkB]);
+  const onChangeW = () => {
+    setCheckW(!checkW);
+  };
+  const onChangeI = (newValue) => {
+    console.log(newValue);
+    setInputValue(newValue);
+  };
   let map = [
     {
       name: "bla",
@@ -5505,7 +5544,6 @@ function PhContent() {
       brand: "brand",
     },
   ];
-  console.log(map.length);
   const [currentPage, setCurrentPage] = useState(1);
   const dataInPage = 20;
   const lastIndex = currentPage * dataInPage;
@@ -5513,6 +5551,94 @@ function PhContent() {
   const data = map.slice(firstIndex, lastIndex);
   return (
     <div className="page">
+      <div className="ml-5  show:w-1/2 block mb-3 md:hidden ">
+        <InputGroup>
+          <InputGroup.Text
+            id="basic-addon1"
+            class="flex items-center justify-center  bg-SReg text-white p-2 rounded-md cursor-pointer hover:bg-SSReg duration-.3s"
+          >
+            <i className="fas fa-search"></i>
+          </InputGroup.Text>
+          <Form.Control
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon2"
+            style={{
+              boxShadow: "none",
+              border: "2px solid #52b0ed",
+            }}
+          />
+          <div ref={popF}>
+            <InputGroup.Text
+              id="basic-addon1"
+              class={` flex items-center justify-center ${
+                showF ? "bg-SSReg" : "bg-SReg"
+              }  text-white p-2 h-full w-14  cursor-pointer hover:bg-SSReg duration-.3s`}
+              onClick={() => {
+                setShowF(!showF);
+              }}
+            >
+              <i className="fa-solid fa-sitemap"></i>
+            </InputGroup.Text>
+            <div
+              className={`w-check h-80 rounded-md bg-slate-100 absolute right-0 top-10 shadow-md transition duration-.3s overflow-auto ${
+                showF ? "opacity-100 visible z-10" : "opacity-0 invisible"
+              } `}
+            >
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
+                <Checkbox onChange={onChangeB} checked={checkB}>
+                  Brand
+                </Checkbox>
+              </div>
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
+                <div className="text-sm">Price</div>
+                <Space
+                  style={{
+                    width: "100%",
+                  }}
+                  direction="vertical"
+                >
+                  <Row>
+                    <Col span={12}>
+                      <Slider
+                        min={10}
+                        max={1000}
+                        onChange={onChangeI}
+                        value={typeof inputValue === "number" ? inputValue : 0}
+                      />
+                    </Col>
+                    <Col span={4}>
+                      <InputNumber
+                        min={10}
+                        max={1000}
+                        style={{
+                          margin: "0 16px",
+                        }}
+                        value={inputValue}
+                        onChange={onChangeI}
+                      />
+                    </Col>
+                  </Row>
+                </Space>
+              </div>
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
+                <Checkbox onChange={onChangeW} checked={checkW}>
+                  without prescription
+                </Checkbox>
+              </div>
+              <div className="p-2  transition-all border border-b-4 border-gray-500">
+                <div className="text-sm">Type</div>
+                <CheckboxGroup
+                  options={["Needle", "Capsule", "syrups"]}
+                  value={checkedList}
+                  onChange={onChange}
+                />
+              </div>
+            </div>
+          </div>
+        </InputGroup>
+      </div>
+
       <div className=" grid grid-cols-fluid grid-rows-fluid    ">
         {data.map((e, inx) => (
           <Link

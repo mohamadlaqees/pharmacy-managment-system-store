@@ -27,7 +27,9 @@ module.exports = {
         custom2: "95.5%",
         form: "500px",
         photo: "860px",
-        details:'400px'
+        details: "400px",
+        job:'410px',
+        check: "310px",
       },
       transitionDuration: {
         ".3s": ".3s",
@@ -40,8 +42,8 @@ module.exports = {
         mCont: "420px",
       },
       gridTemplateColumns: {
-        'fluid': 'repeat(auto-fill, minmax(20rem, 1fr))',
-      }
+        fluid: "repeat(auto-fill, minmax(20rem, 1fr))",
+      },
     },
   },
   plugins: [],

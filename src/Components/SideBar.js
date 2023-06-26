@@ -30,7 +30,13 @@ function SideBar() {
             <li className={`link`}>
               <NavLink className="route" to={"interaction"} end>
                 <i className="	fas fa-compress-alt "></i>
-                {check ? "" : "Interction"}
+                {check ? "" : "Interaction"}
+              </NavLink>
+            </li>
+            <li className={`link`}>
+              <NavLink className="route" to={"Jobs"} end>
+                <i className="fa fa-briefcase "></i>
+                {check ? "" : "Jobs"}
               </NavLink>
             </li>
             <span className="  text-gray-500   cursor-pointer absolute bottom-0  pt-4 pb-3 rounded-md">
