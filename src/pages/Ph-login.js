@@ -7,7 +7,10 @@ import { useFormik } from "formik";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../states/loginSlice";
 export default function PhLogin() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
@@ -32,8 +35,8 @@ export default function PhLogin() {
     },
     validationSchema: SignupSchema,
     onSubmit: async () => {
-      navigate("/ph-store", { replace: true });
-      console.log("login");
+      // navigate("/ph-store", { replace: true });
+      dispatch(login({email:formik.values.email,password:formik.values.password}))
       msg("success", "Login success");
     },
   });
