@@ -8,7 +8,10 @@ import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import InputBase from "@mui/material/InputBase";
 import { styled } from "@mui/material/styles";
+import { useDispatch } from "react-redux";
+import { register } from "../states/registerSlice";
 export default function Register() {
+  const dispatch = useDispatch();
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "label + &": {
       marginTop: theme.spacing(3),
@@ -28,10 +31,9 @@ export default function Register() {
       },
     },
   }));
-
-  const [age, setAge] = React.useState("");
+  const [gender, setGender] = React.useState("");
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setGender(event.target.value);
   };
   const navigate = useNavigate();
   const SignupSchema = Yup.object().shape({
@@ -65,9 +67,19 @@ export default function Register() {
     },
     validationSchema: SignupSchema,
     onSubmit: async () => {
-      console.log("registered");
+      dispatch(
+        register({
+          email: formik.values.email,
+          password: formik.values.password,
+          first_name: formik.values.Fname,
+          last_name: formik.values.Lname,
+          gender,
+          address: formik.values.address,
+          birthdate: formik.values.birthdate,
+        })
+      );
       msg("success", "register success");
-      navigate("/ph-store");
+      // navigate("/ph-store");
     },
   });
   return (
@@ -76,10 +88,7 @@ export default function Register() {
         <div className="w-96 mt-20 ml-auto mr-auto   xl:w-form h-fit relative xl:m-auto shadow-xl p-5 rounded-md bg-secondry  ">
           <Form onSubmit={formik.handleSubmit}>
             <div className="xl:flex xl:gap-3">
-              <Form.Group
-                className="mb-3 xl:col-md-6 "
-                controlId="formBasicName"
-              >
+              <Form.Group className="mb-3 xl:col-md-6 " controlId="Fname">
                 <Form.Label className="text-SWord">First name</Form.Label>
                 <Form.Control
                   name="Fname"
@@ -97,10 +106,7 @@ export default function Register() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group
-                className="mb-3 xl:col-md-6 "
-                controlId="formBasicLastName"
-              >
+              <Form.Group className="mb-3 xl:col-md-6 " controlId="Lname">
                 <Form.Label className="text-SWord">Last name</Form.Label>
                 <Form.Control
                   name="Lname"
@@ -120,10 +126,7 @@ export default function Register() {
             </div>
 
             <div className="xl:flex xl:gap-3">
-              <Form.Group
-                className="mb-3 xl:col-md-6"
-                controlId="formBasicEmail"
-              >
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Email">
                 <Form.Label className="text-SWord">Email</Form.Label>
                 <Form.Control
                   name="email"
@@ -142,29 +145,24 @@ export default function Register() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group
-                className="mb-3 xl:col-md-6"
-                controlId="formBasicPassword"
-              >
-                <Form.Group className="mb-3" controlId="formBasicPhone">
-                  <Form.Label className="text-SWord">Password</Form.Label>
-                  <Form.Control
-                    name="password"
-                    type="password"
-                    vlaue={formik.values.password}
-                    onChange={formik.handleChange}
-                    isInvalid={
-                      formik.touched.password && !!formik.errors.password
-                    }
-                    isValid={formik.touched.password && !formik.errors.password}
-                    placeholder="Password"
-                    onBlur={formik.handleBlur}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    {formik.errors.password}
-                  </Form.Control.Feedback>
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                </Form.Group>
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Password">
+                <Form.Label className="text-SWord">Password</Form.Label>
+                <Form.Control
+                  name="password"
+                  type="password"
+                  vlaue={formik.values.password}
+                  onChange={formik.handleChange}
+                  isInvalid={
+                    formik.touched.password && !!formik.errors.password
+                  }
+                  isValid={formik.touched.password && !formik.errors.password}
+                  placeholder="Password"
+                  onBlur={formik.handleBlur}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {formik.errors.password}
+                </Form.Control.Feedback>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
             </div>
             <div className="mb-4">
@@ -172,7 +170,7 @@ export default function Register() {
               <FormControl fullWidth size="small" style={{ boxShadow: "none" }}>
                 <NativeSelect
                   id="demo-customized-select-native"
-                  value={age}
+                  value={gender}
                   onChange={handleChange}
                   input={<BootstrapInput />}
                 >
@@ -184,10 +182,7 @@ export default function Register() {
               </FormControl>
             </div>
             <div className="xl:flex xl:gap-3">
-              <Form.Group
-                className="mb-3 xl:col-md-6"
-                controlId="formBasicAddress"
-              >
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Address">
                 <Form.Label className="text-SWord">Address</Form.Label>
                 <Form.Control
                   name="address"
@@ -201,10 +196,7 @@ export default function Register() {
                 />
               </Form.Group>
 
-              <Form.Group
-                className="mb-3 xl:col-md-6"
-                controlId="formBasicAddress"
-              >
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Birthdate">
                 <Form.Label className="text-SWord">Birth date</Form.Label>
                 <Form.Control
                   name="birthdate"
