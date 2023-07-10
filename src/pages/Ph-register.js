@@ -82,6 +82,7 @@ export default function Register() {
       // navigate("/ph-store");
     },
   });
+  console.log(gender)
   return (
     <React.Fragment>
       <div className=" xl:flex xl:justify-between">
@@ -175,9 +176,9 @@ export default function Register() {
                   input={<BootstrapInput />}
                 >
                   <option aria-label="None" value="" />
-                  <option value={10}>Male</option>
-                  <option value={20}>Female</option>
-                  <option value={30}>Prefer not to say</option>
+                  <option >Male</option>
+                  <option >Female</option>
+                  <option >Prefer not to say</option>
                 </NativeSelect>
               </FormControl>
             </div>

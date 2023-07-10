@@ -9,11 +9,16 @@ export const register = createAsyncThunk(
       const { data } = await axios.post("http://localhost:8000/api/register", {
         email: item.email,
         password: item.password,
+        password_confirmation:item.password,
         first_name:item.first_name,
         last_name:item.last_name,
         date_of_birth:item.birthdate,
         address:item.address,
         gender:item.gender,
+      },{
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
       return data;
     } catch (error) {
