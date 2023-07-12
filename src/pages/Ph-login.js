@@ -1,17 +1,27 @@
 import * as React from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import * as Yup from "yup";
-import { message, Space } from "antd";
+import { message } from "antd";
 import { useFormik } from "formik";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../states/loginSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { login, reset } from "../states/loginSlice";
 export default function PhLogin() {
+  const { errorL, successL } = useSelector((state) => state.loginSlice);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  React.useEffect(() => {
+    if (successL === "User has been logged in") {
+      // navigate("/ph-login");
+      msg("success", `${successL}`);
+      dispatch(reset());
+    } else {
+      if (errorL !== null) {
+        msg("error", "This user is not  exist !");
+      }
+    }
+  }, [successL, errorL, navigate, dispatch]);
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().required("Required").min(8, "Too Short!"),
@@ -35,9 +45,9 @@ export default function PhLogin() {
     },
     validationSchema: SignupSchema,
     onSubmit: async () => {
-      // navigate("/ph-store", { replace: true });
-      dispatch(login({email:formik.values.email,password:formik.values.password}))
-      msg("success", "Login success");
+      dispatch(
+        login({ email: formik.values.email, password: formik.values.password })
+      );
     },
   });
   return (

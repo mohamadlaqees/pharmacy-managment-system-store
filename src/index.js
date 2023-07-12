@@ -19,7 +19,8 @@ import Interactions from "./pages/Interactions";
 import Jobs from "./pages/Jobs";
 import JobDetails from "./pages/JobDetails";
 import { Provider } from "react-redux";
-import store from './states/index'
+import store from "./states/index";
+import EmailVerify from "./pages/EmailVerify";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const routes = createBrowserRouter([
   {
     path: "ph-login",
     element: <PhLogin />,
+  },
+  {
+    path: "ph-verify",
+    element: <EmailVerify />,
   },
   {
     path: "ph-register",
@@ -54,9 +59,9 @@ const routes = createBrowserRouter([
 ]);
 root.render(
   <Provider store={store}>
-  <RouterProvider router={routes}>
-    <App />
-  </RouterProvider>
+    <RouterProvider router={routes}>
+      <App />
+    </RouterProvider>
   </Provider>
 );
 

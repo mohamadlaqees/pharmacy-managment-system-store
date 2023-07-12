@@ -4,38 +4,24 @@ import * as Yup from "yup";
 import { message } from "antd";
 import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
-import FormControl from "@mui/material/FormControl";
-import NativeSelect from "@mui/material/NativeSelect";
-import InputBase from "@mui/material/InputBase";
-import { styled } from "@mui/material/styles";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../states/registerSlice";
+import { reset } from "../states/registerSlice";
 export default function Register() {
   const dispatch = useDispatch();
-  const BootstrapInput = styled(InputBase)(({ theme }) => ({
-    "label + &": {
-      marginTop: theme.spacing(3),
-    },
-    "& .MuiInputBase-input": {
-      borderRadius: 4,
-      position: "relative",
-      backgroundColor: theme.palette.background.paper,
-      border: "1px solid #ced4da",
-      fontSize: 16,
-      padding: "8px 26px 8px 12px",
-      transition: theme.transitions.create(["border-color", "box-shadow"]),
-      "&:focus": {
-        borderRadius: 4,
-        borderColor: "#80bdff",
-        boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)",
-      },
-    },
-  }));
-  const [gender, setGender] = React.useState("");
-  const handleChange = (event) => {
-    setGender(event.target.value);
-  };
   const navigate = useNavigate();
+  const { errorR, successR } = useSelector((state) => state.registerSlice);
+  React.useEffect(() => {
+    if (successR !== null) {
+      navigate("/ph-verify");
+      msg("success", `${successR}`);
+      dispatch(reset());
+    } else {
+      if (errorR !== null) {
+        msg("error", "This user is already exist !");
+      }
+    }
+  }, [successR, errorR, navigate, dispatch]);
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().required("Required").min(8, "Too Short!"),
@@ -43,6 +29,7 @@ export default function Register() {
     Lname: Yup.string().required("Required").min(2, "Too Short!"),
     address: Yup.string().required("Required"),
     birthdate: Yup.date().required("Required"),
+    gender: Yup.string().required("Required"),
   });
   const msg = (type, msg) => {
     switch (type) {
@@ -64,25 +51,25 @@ export default function Register() {
       password: "",
       address: "",
       birthdate: "",
+      gender: "",
     },
     validationSchema: SignupSchema,
     onSubmit: async () => {
+      localStorage.setItem("email", formik.values.email);
       dispatch(
         register({
           email: formik.values.email,
           password: formik.values.password,
           first_name: formik.values.Fname,
           last_name: formik.values.Lname,
-          gender,
+          gender: formik.values.gender,
           address: formik.values.address,
           birthdate: formik.values.birthdate,
         })
       );
-      msg("success", "register success");
-      // navigate("/ph-store");
     },
   });
-  console.log(gender)
+
   return (
     <React.Fragment>
       <div className=" xl:flex xl:justify-between">
@@ -168,19 +155,21 @@ export default function Register() {
             </div>
             <div className="mb-4">
               <Form.Label className="text-SWord">Gender</Form.Label>
-              <FormControl fullWidth size="small" style={{ boxShadow: "none" }}>
-                <NativeSelect
-                  id="demo-customized-select-native"
-                  value={gender}
-                  onChange={handleChange}
-                  input={<BootstrapInput />}
-                >
-                  <option aria-label="None" value="" />
-                  <option >Male</option>
-                  <option >Female</option>
-                  <option >Prefer not to say</option>
-                </NativeSelect>
-              </FormControl>
+              <Form.Select
+                aria-label="Default select example"
+                isInvalid={formik.touched.gender && !!formik.errors.gender}
+                isValid={formik.touched.gender && !formik.errors.gender}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                name="gender"
+                type="gender"
+                value={formik.values.gender}
+              >
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </Form.Select>
             </div>
             <div className="xl:flex xl:gap-3">
               <Form.Group className="mb-3 xl:col-md-6" controlId="Address">

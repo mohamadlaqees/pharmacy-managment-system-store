@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const initialState = { loading: false, error: null };
+const initialState = { loading: false, errorL: null, successL: null };
 export const login = createAsyncThunk("login/login", async (item, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
@@ -16,20 +16,28 @@ export const login = createAsyncThunk("login/login", async (item, thunkApi) => {
 const loginSlice = createSlice({
   name: "login",
   initialState,
-  reducers: {},
+  reducers: {
+    reset: (state, action) => {
+      state.successL = null;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(login.pending, (state, action) => {
-      state.error = null;
+      state.successL = null;
+      state.errorL = null;
       state.loading = true;
     });
     builder.addCase(login.fulfilled, (state, action) => {
-      state.error = null;
+      state.errorL = null;
       state.loading = false;
+      state.successL = action.payload.message;
       console.log(action);
     });
     builder.addCase(login.rejected, (state, action) => {
-      state.error = action.payload;
+      state.errorL = action.payload.message;
+      state.successL = null;
     });
   },
 });
 export default loginSlice.reducer;
+export const { reset } = loginSlice.actions;
