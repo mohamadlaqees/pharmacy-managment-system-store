@@ -3,8 +3,11 @@ import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { reset, verify } from "../states/authSalice";
+import Loading from "../Components/loading";
 export default function EmailVerify() {
-  const { errorA, successA } = useSelector((state) => state.authSlice);
+  const { errorA, successA, loadingA } = useSelector(
+    (state) => state.authSlice
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   React.useEffect(() => {
@@ -42,13 +45,15 @@ export default function EmailVerify() {
               {localStorage.getItem("email")}
             </div>
             <div className="d-grid gap-2 mt-28">
-              <button
-                type="submit"
-                className="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
-                onClick={() => dispatch(verify())}
-              >
-                Verify
-              </button>
+              <Loading error={errorA} loading={loadingA}>
+                <button
+                  type="submit"
+                  className="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
+                  onClick={() => dispatch(verify())}
+                >
+                  Verify
+                </button>
+              </Loading>
             </div>
           </div>
         </div>

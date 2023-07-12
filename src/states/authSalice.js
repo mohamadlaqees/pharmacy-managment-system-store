@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../Components/axios";
-const initialState = { errorA: null, successA: null };
+const initialState = { errorA: null, successA: null, loadingA: false };
 export const verify = createAsyncThunk(
   "auth/verify",
   async (item, thunkApi) => {
@@ -26,19 +26,19 @@ const authSlice = createSlice({
     builder.addCase(verify.pending, (state, action) => {
       state.successA = null;
       state.errorA = null;
-      state.loading = true;
+      state.loadingA = true;
     });
     builder.addCase(verify.fulfilled, (state, action) => {
       console.log(action);
       state.errorA = null;
-      state.loading = false;
+      state.loadingA = false;
       state.successA = action.payload.message;
       console.log(action);
     });
     builder.addCase(verify.rejected, (state, action) => {
       state.errorA = action.payload.message;
       state.successA = null;
-      state.loading = false;
+      state.loadingA = false;
     });
   },
 });

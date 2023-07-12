@@ -13,12 +13,12 @@ export default function PhLogin() {
   const navigate = useNavigate();
   React.useEffect(() => {
     if (successL === "User has been logged in") {
-      // navigate("/ph-login");
+      navigate("/ph-store");
       msg("success", `${successL}`);
       dispatch(reset());
     } else {
       if (errorL !== null) {
-        msg("error", "This user is not  exist !");
+        msg("error", "email or password is not correct !");
       }
     }
   }, [successL, errorL, navigate, dispatch]);
