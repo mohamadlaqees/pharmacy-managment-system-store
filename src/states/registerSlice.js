@@ -5,7 +5,7 @@ const initialState = { loading: false, errorR: null, successR: null };
 export const register = createAsyncThunk(
   "register/register",
   async (item, thunkApi) => {
-    const { rejectWithValue, dispatch } = thunkApi;
+    const { rejectWithValue } = thunkApi;
     try {
       const { data } = await axios.post("/register", {
         email: item.email,
