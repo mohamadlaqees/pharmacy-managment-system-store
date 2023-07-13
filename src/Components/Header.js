@@ -225,7 +225,7 @@ function Header({ set, check }) {
         </div>
         <div className=" transition-all  " ref={prof}>
           <div
-            className="flex gap-3 cursor-pointer"
+            className="flex gap-3 cursor-pointer w-40"
             onClick={() => setShowP(!showP)}
           >
             <div>
