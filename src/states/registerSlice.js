@@ -23,6 +23,7 @@ export const register = createAsyncThunk(
     }
   }
 );
+
 const registerSlice = createSlice({
   name: "register",
   initialState,

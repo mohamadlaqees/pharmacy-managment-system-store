@@ -34,6 +34,9 @@ export default function EmailVerify() {
         return "";
     }
   };
+  const buttonHandler = () => {
+    dispatch(verify());
+  };
 
   return (
     <React.Fragment>
@@ -49,7 +52,7 @@ export default function EmailVerify() {
                 <button
                   type="submit"
                   className="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
-                  onClick={() => dispatch(verify())}
+                  onClick={()=>buttonHandler()}
                 >
                   Verify
                 </button>
