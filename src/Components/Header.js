@@ -5,8 +5,11 @@ import { Checkbox, Divider } from "antd";
 import { NavLink, Link } from "react-router-dom";
 import { Col, InputNumber, Row, Slider, Space } from "antd";
 import { useCallback } from "react";
+import { useSelector } from "react-redux";
+import loginSlice from "../states/loginSlice";
 
 function Header({ set, check }) {
+  const { userData } = useSelector((state) => state.loginSlice);
   const CheckboxGroup = Checkbox.Group;
   const defaultCheckedList = [];
   const [showN, setShowN] = useState(false);
@@ -231,7 +234,7 @@ function Header({ set, check }) {
               ></i>
             </div>
             <div className=" ">
-              <span className="block text-sm">Mohammad Laqees</span>
+              <span className="block text-sm">{`${userData.first_name} ${userData.last_name}`}</span>
               <span className="text-gray-500 block text-sm">Admin</span>
             </div>
           </div>

@@ -1,11 +1,19 @@
-import React, { Fragment, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import SideBar from "../Components/SideBar";
+import { getUserData } from "../states/loginSlice";
 export const checkContext = React.createContext();
 const CheckProvider = checkContext.Provider;
 function Dashboard() {
+  const { errorL, successL } = useSelector((state) => state.loginSlice);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [check, setCheck] = useState(false);
+  useEffect(() => {
+    dispatch(getUserData());
+  }, [dispatch]);
   return (
     <Fragment>
       <div className="flex">
