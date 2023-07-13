@@ -30,6 +30,7 @@ const registerSlice = createSlice({
   reducers: {
     reset: (state, action) => {
       state.successR = null;
+      state.errorR=null
     },
   },
   extraReducers: (builder) => {

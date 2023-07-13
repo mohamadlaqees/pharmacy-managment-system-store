@@ -12,7 +12,7 @@ export default function PhLogin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   React.useEffect(() => {
-    if (successL === "User has been logged in") {
+    if (successL !== null) {
       navigate("/ph-store");
       msg("success", `${successL}`);
       dispatch(reset());

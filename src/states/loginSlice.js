@@ -19,6 +19,7 @@ const loginSlice = createSlice({
   reducers: {
     reset: (state, action) => {
       state.successL = null;
+      state.errorL=null
     },
   },
   extraReducers: (builder) => {

@@ -21,6 +21,7 @@ const authSlice = createSlice({
   reducers: {
     reset: (state, action) => {
       state.successA = null;
+      state.errorA=null
     },
   },
   extraReducers: (builder) => {
