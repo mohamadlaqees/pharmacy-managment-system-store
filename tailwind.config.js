@@ -10,6 +10,7 @@ module.exports = {
         SSReg: "#1390e3 ",
         font1: "#4f4f4f",
         font2: "#757575",
+        email:'#05536a'
       },
       height: {
         photo: "753px",

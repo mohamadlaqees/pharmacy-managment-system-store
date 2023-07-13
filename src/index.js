@@ -14,13 +14,13 @@ import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import UploadPrescription from "./pages/UploadPrescription";
 import MyOrders from "./pages/MyOrders";
-// <<<<<<< HEAD
 import Product from "./pages/Product";
-// =======
 import Interactions from "./pages/Interactions";
 import Jobs from "./pages/Jobs";
 import JobDetails from "./pages/JobDetails";
-// >>>>>>> 56af85f482a414774db21a2b40720669057f8ee3
+import { Provider } from "react-redux";
+import store from "./states/index";
+import EmailVerify from "./pages/EmailVerify";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routes = createBrowserRouter([
   {
@@ -30,6 +30,10 @@ const routes = createBrowserRouter([
   {
     path: "ph-login",
     element: <PhLogin />,
+  },
+  {
+    path: "ph-verify",
+    element: <EmailVerify />,
   },
   {
     path: "ph-register",
@@ -54,9 +58,11 @@ const routes = createBrowserRouter([
   },
 ]);
 root.render(
-  <RouterProvider router={routes}>
-    <App />
-  </RouterProvider>
+  <Provider store={store}>
+    <RouterProvider router={routes}>
+      <App />
+    </RouterProvider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

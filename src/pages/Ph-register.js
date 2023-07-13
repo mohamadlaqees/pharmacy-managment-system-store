@@ -1,20 +1,35 @@
 import * as React from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import * as Yup from "yup";
 import { message } from "antd";
 import { useFormik } from "formik";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../states/registerSlice";
+import { reset } from "../states/registerSlice";
 export default function Register() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { errorR, successR } = useSelector((state) => state.registerSlice);
+  React.useEffect(() => {
+    if (successR !== null) {
+      navigate("/ph-verify");
+      msg("success", `${successR}`);
+      dispatch(reset());
+    } else {
+      if (errorR !== null) {
+        msg("error", "This user is already exist !");
+      }
+    }
+  }, [successR, errorR, navigate, dispatch]);
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().required("Required").min(8, "Too Short!"),
     Fname: Yup.string().required("Required").min(2, "Too Short!"),
     Lname: Yup.string().required("Required").min(2, "Too Short!"),
-    phone: Yup.number().required("Required"),
     address: Yup.string().required("Required"),
+    birthdate: Yup.date().required("Required"),
+    gender: Yup.string().required("Required"),
   });
   const msg = (type, msg) => {
     switch (type) {
@@ -34,26 +49,34 @@ export default function Register() {
       Lname: "",
       email: "",
       password: "",
-      phone: "",
       address: "",
+      birthdate: "",
+      gender: "",
     },
     validationSchema: SignupSchema,
     onSubmit: async () => {
-      console.log("registered");
-      msg("success", "register success");
-      navigate("/ph-store");
+      localStorage.setItem("email", formik.values.email);
+      dispatch(
+        register({
+          email: formik.values.email,
+          password: formik.values.password,
+          first_name: formik.values.Fname,
+          last_name: formik.values.Lname,
+          gender: formik.values.gender,
+          address: formik.values.address,
+          birthdate: formik.values.birthdate,
+        })
+      );
     },
   });
+
   return (
     <React.Fragment>
       <div className=" xl:flex xl:justify-between">
         <div className="w-96 mt-20 ml-auto mr-auto   xl:w-form h-fit relative xl:m-auto shadow-xl p-5 rounded-md bg-secondry  ">
           <Form onSubmit={formik.handleSubmit}>
             <div className="xl:flex xl:gap-3">
-              <Form.Group
-                className="mb-3 xl:col-md-6 "
-                controlId="formBasicName"
-              >
+              <Form.Group className="mb-3 xl:col-md-6 " controlId="Fname">
                 <Form.Label className="text-SWord">First name</Form.Label>
                 <Form.Control
                   name="Fname"
@@ -71,10 +94,7 @@ export default function Register() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group
-                className="mb-3 xl:col-md-6 "
-                controlId="formBasicLastName"
-              >
+              <Form.Group className="mb-3 xl:col-md-6 " controlId="Lname">
                 <Form.Label className="text-SWord">Last name</Form.Label>
                 <Form.Control
                   name="Lname"
@@ -94,10 +114,7 @@ export default function Register() {
             </div>
 
             <div className="xl:flex xl:gap-3">
-              <Form.Group
-                className="mb-3 xl:col-md-6"
-                controlId="formBasicEmail"
-              >
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Email">
                 <Form.Label className="text-SWord">Email</Form.Label>
                 <Form.Control
                   name="email"
@@ -116,10 +133,7 @@ export default function Register() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group
-                className="mb-3 xl:col-md-6"
-                controlId="formBasicPassword"
-              >
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Password">
                 <Form.Label className="text-SWord">Password</Form.Label>
                 <Form.Control
                   name="password"
@@ -133,38 +147,63 @@ export default function Register() {
                   placeholder="Password"
                   onBlur={formik.handleBlur}
                 />
+                <Form.Control.Feedback type="invalid">
+                  {formik.errors.password}
+                </Form.Control.Feedback>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              </Form.Group>
+            </div>
+            <div className="mb-4">
+              <Form.Label className="text-SWord">Gender</Form.Label>
+              <Form.Select
+                aria-label="Default select example"
+                isInvalid={formik.touched.gender && !!formik.errors.gender}
+                isValid={formik.touched.gender && !formik.errors.gender}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                name="gender"
+                type="gender"
+                value={formik.values.gender}
+              >
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </Form.Select>
+            </div>
+            <div className="xl:flex xl:gap-3">
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Address">
+                <Form.Label className="text-SWord">Address</Form.Label>
+                <Form.Control
+                  name="address"
+                  type="address"
+                  vlaue={formik.values.address}
+                  onChange={formik.handleChange}
+                  isInvalid={formik.touched.address && !!formik.errors.address}
+                  isValid={formik.touched.address && !formik.errors.address}
+                  placeholder="Address"
+                  onBlur={formik.handleBlur}
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3 xl:col-md-6" controlId="Birthdate">
+                <Form.Label className="text-SWord">Birth date</Form.Label>
+                <Form.Control
+                  name="birthdate"
+                  type="date"
+                  vlaue={formik.values.birthdate}
+                  onChange={formik.handleChange}
+                  isInvalid={
+                    formik.touched.birthdate && !!formik.errors.birthdate
+                  }
+                  isValid={formik.touched.birthdate && !formik.errors.birthdate}
+                  placeholder="Birth date"
+                  onBlur={formik.handleBlur}
+                />
               </Form.Group>
             </div>
 
-            <Form.Group className="mb-3" controlId="formBasicPhone">
-              <Form.Label className="text-SWord">Phone</Form.Label>
-              <Form.Control
-                name="phone"
-                type="phone"
-                vlaue={formik.values.phone}
-                onChange={formik.handleChange}
-                isInvalid={formik.touched.phone && !!formik.errors.phone}
-                isValid={formik.touched.phone && !formik.errors.phone}
-                placeholder="Phone"
-                onBlur={formik.handleBlur}
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicAddress">
-              <Form.Label className="text-SWord">Address</Form.Label>
-              <Form.Control
-                name="address"
-                type="address"
-                vlaue={formik.values.address}
-                onChange={formik.handleChange}
-                isInvalid={formik.touched.address && !!formik.errors.address}
-                isValid={formik.touched.address && !formik.errors.address}
-                placeholder="Address"
-                onBlur={formik.handleBlur}
-              />
-            </Form.Group>
-
-            <div className="d-grid gap-2 mb-8">
+            <div className="d-grid gap-2 mb-8 mt-4">
               <button
                 type="submit"
                 className="p-1 border-SReg border-2 text-SReg rounded-md hover:text-white hover:bg-SReg hover:border-SReg duration-.3s"
